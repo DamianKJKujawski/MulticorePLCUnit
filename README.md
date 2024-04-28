@@ -1,3 +1,6 @@
+OPCODE:
+
+```
 * 				Instruction set for bit operands:			     *
 *------------------------------------------ L O A D -----------------------------------------*
 
@@ -134,3 +137,4 @@
 * Other: (1 cycle operations)
  {0000} {1000} 					END
  DEFAULT						No operate
+```
