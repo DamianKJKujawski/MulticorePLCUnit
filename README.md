@@ -126,7 +126,7 @@ OPCODE:
  {0000} {0000}					STOP
 
 * Save to Semaphore:
- {1100} {0} {000}				SET RLO -> (SEM)
+ {1100} {0} {000}				SET	RLO -> (SEM)
 
 * Read Semaphore:
  {1100} {1} {110}				READ	(SEM) -> RLO  
