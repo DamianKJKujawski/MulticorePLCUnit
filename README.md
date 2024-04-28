@@ -30,27 +30,27 @@ OPCODE:
 * LU:
  ( Instruction | RLO-Addr | LU-OPcode )
 
- {0011} {00} {00}			Ab CONST	RLO  x  CONST -> RLO	//2 cykl //DEKODER: {00110}
+ {0011} {00} {00}			Ab CONST	RLO  x  CONST -> RLO	// 2 cycles // DECODER: {00110}
  {0011} {00} {01}			Ob CONST	RLO  +  CONST -> RLO 
  {0011} {00} {11}			Xb CONST	RLO xor CONST -> RLO
 
- {0100} {01} {00}			Ab MEM	 	RLO  x  (MEM) -> RLO	//3 cykl //DEKODER: {01000}
+ {0100} {01} {00}			Ab MEM	 	RLO  x  (MEM) -> RLO	// 3 cycles // DECODER: {01000}
  {0100} {01} {01}			Ob MEM		RLO  +  (MEM) -> RLO
  {0100} {01} {11}			Xb MEM		RLO xor (MEM) -> RLO
 
- {0011} {10} {00}			Ab REG	 	RLO  x  (REG) -> RLO 	//2 cykl //DEKODER: {00110}
+ {0011} {10} {00}			Ab REG	 	RLO  x  (REG) -> RLO 	// 2 cycles // DECODER: {00110}
  {0011} {10} {01}			Ob REG		RLO  +  (REG) -> RLO 
  {0011} {10} {11}			Xb REG		RLO xor (REG) -> RLO
  
- {0100} {11} {10}			Nb 	       -RLO -> RLO				//1 cykl //DEKODER: {01001}
+ {0100} {11} {10}			Nb 	       -RLO -> RLO				// 1 cycle // DECODER: {01001}
 
 |* Save to RAM:
 |---------------------------------------------------------------------------------------------
-|{0101} {0} {001}			STb MEM	 	RLO -> (MEM)		    //3 cykle //DEKODER: {01010}
+|{0101} {0} {001}			STb MEM	 	RLO -> (MEM)		    //3 cycles // DECODER: {01010}
 |---------------------------------------------------------------------------------------------
 |* Save to Register:
 |---------------------------------------------------------------------------------------------
-|{0101} {1} {010}			STb REG	 	RLO -> (REG)			//2 cykle //DEKODER: {01001}
+|{0101} {1} {010}			STb REG	 	RLO -> (REG)			//2 cycles // DECODER: {01001}
 |---------------------------------------------------------------------------------------------
 
 
@@ -60,24 +60,24 @@ OPCODE:
 ==============================================================================================	
 
 * Load Constant (1 cycle operations)
- {0110} {X} {000}			LDw CONST	AKU_A -> AKU_B; CONST -> AKU_A		//2 cykle //DEKODER: {01001}
+ {0110} {X} {000}			LDw CONST	AKU_A -> AKU_B; CONST -> AKU_A		// 2 cyclec // DECODER: {01001}
 
 *------------------------------------------ L O A D -----------------------------------------*
 |* Load from RAM:
 |{ Instruction | Bit=0/Word=1 | RLO-Addr }
 |---------------------------------------------------------------------------------------------
-|{0111} {0} {001}			LDw MEM		AKU_A -> AKU_B; (MEM) -> AKU_A		//3 cykle //DEKODER: {01110}
+|{0111} {0} {001}			LDw MEM		AKU_A -> AKU_B; (MEM) -> AKU_A		//3 cykle // DECODER: {01110}
 |---------------------------------------------------------------------------------------------
 |* Load from REGISTER:
 |---------------------------------------------------------------------------------------------
-|{0111} {1} {010}			LDw REG		AKU_A -> AKU_B; (REG) -> AKU_A		//2 cykle //DEKODER: {01111}
+|{0111} {1} {010}			LDw REG		AKU_A -> AKU_B; (REG) -> AKU_A		//2 cykle // DECODER: {01111}
 |---------------------------------------------------------------------------------------------
 
 * ALU:
- {1000} {0000}				AND  		AKU_B and AKU_A -> AKU_A 		0 -> OV		//1 cykl      		//CODER: 1000
- {1000} {0001}				OR  		AKU_B or AKU_A -> AKU_A 		0 -> OV 	//{00XX}  		   -> Czyszczenie OV
- {1000} {0010}				NEG  	  	-AKU_A -> AKU_A 				0 -> OV 	//{100X}  		   -> Modyfikacja OV
- {1000} {0011}				XOR  		AKU_B xor AKU_A -> AKU_A 		0 -> OV		//(1XXX && !100X)) -> Modyfikacja Comparator 
+ {1000} {0000}				AND  		AKU_B and AKU_A -> AKU_A 		0 -> OV		// 1 cycle      		// CODER: 1000
+ {1000} {0001}				OR  		AKU_B or AKU_A -> AKU_A 		0 -> OV 	// {00XX}  		   -> Clear OV
+ {1000} {0010}				NEG  		-AKU_A -> AKU_A 				0 -> OV 	// {100X}  		   -> flag modification
+ {1000} {0011}				XOR  		AKU_B xor AKU_A -> AKU_A 		0 -> OV		// (1XXX && !100X)) -> Set Comparator 
  
  {1000} {0100}				SL  		AKU_A << 1 AKU_A [15] -> OV 0 -> AKU_A [0]
  {1000} {0101}				SR  		AKU_A >> 1 AKU_A [0] -> OV 0 -> AKU_A [15] 
@@ -97,18 +97,18 @@ OPCODE:
 *------------------------------------------ S A V E -----------------------------------------*
 |* Save to RAM:
 |---------------------------------------------------------------------------------------------
-|{1001} {0} {001}			STw MEM		AKU_A -> (MEM)		//3 cykle //DEKODER: {10010}
+|{1001} {0} {001}			STw MEM		AKU_A -> (MEM)		//3 cycles // DECODER: {10010}
 |---------------------------------------------------------------------------------------------
 |* Save to REGISTER:
 |---------------------------------------------------------------------------------------------
-|{1001} {1} {010}			STw REG		AKU_A -> (REG)		//2 cykle //DEKODER: {10011}
+|{1001} {1} {010}			STw REG		AKU_A -> (REG)		//2 cycles // DECODER: {10011}
 |---------------------------------------------------------------------------------------------
 
 ==============================================================================================				
 * Jumps:	
 ==============================================================================================
 * Instruction set for jumps:
- {1010} {0} {000}			JMP 		Jump to the label	//2 cykle //DEKODER: {10100}
+ {1010} {0} {000}			JMP 		Jump to the label	// 2 cycles // DECODER: {10100}
 
  {1010} {0} {001}			JMPC 		Jump to the label, if RLO=1
  {1010} {0} {010}			JMPCN 		Jump to the label, if RLO=0
