@@ -1,0 +1,21 @@
+module TIMER_Prescaler
+(
+
+
+);
+
+
+always @(posedge CLK)
+begin
+	if(CPU_Reset)
+	begin
+		_TIMER_PRESCALER = 0;
+	end	
+	else if(!TIMER_EN && _TIMER_CONFIG[7])
+		begin
+			if(_TIMER_PRESCALER != _TIMER_CONFIG[5:0])
+				_TIMER_PRESCALER <= _TIMER_PRESCALER + 1'b1;
+			else 
+				_TIMER_PRESCALER <= 0;
+		end
+end

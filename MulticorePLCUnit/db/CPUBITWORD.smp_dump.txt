@@ -1,0 +1,22 @@
+
+State Machine - |CPU_WORLD|CPU_UNIT:_CPU_UNIT|CORES:_CORES|SEMAPHORE_ROUTER:generate_PERIPHERALS_identifier[2]._SEMAPHORE_ROUTER|semaphoreController
+Name semaphoreController.ACQUIRE semaphoreController.RELEASE semaphoreController.CREATE semaphoreController.IDLE 
+semaphoreController.IDLE 0 0 0 0 
+semaphoreController.CREATE 0 0 1 1 
+semaphoreController.RELEASE 0 1 0 1 
+semaphoreController.ACQUIRE 1 0 0 1 
+
+State Machine - |CPU_WORLD|CPU_UNIT:_CPU_UNIT|CORES:_CORES|SEMAPHORE_ROUTER:generate_PERIPHERALS_identifier[1]._SEMAPHORE_ROUTER|semaphoreController
+Name semaphoreController.ACQUIRE semaphoreController.RELEASE semaphoreController.CREATE semaphoreController.IDLE 
+semaphoreController.IDLE 0 0 0 0 
+semaphoreController.CREATE 0 0 1 1 
+semaphoreController.RELEASE 0 1 0 1 
+semaphoreController.ACQUIRE 1 0 0 1 
+
+State Machine - |CPU_WORLD|CPU_UNIT:_CPU_UNIT|STATES_CONTROLLER:_STATES_CONTROLLER|_state_machine
+Name _state_machine.END _state_machine.WORK _state_machine.BEGIN _state_machine.000 _state_machine.PROGRAMMING_RESET 
+_state_machine.000 0 0 0 0 0 
+_state_machine.BEGIN 0 0 1 1 0 
+_state_machine.WORK 0 1 0 1 0 
+_state_machine.END 1 0 0 1 0 
+_state_machine.PROGRAMMING_RESET 0 0 0 1 1 

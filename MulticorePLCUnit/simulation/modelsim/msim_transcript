@@ -1,0 +1,491 @@
+# Reading D:/Aplikacje/Quartus/modelsim_ase/tcl/vsim/pref.tcl
+# do CPUBITWORD_run_msim_rtl_verilog.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim ALTERA vmap 10.4d Lib Mapping Utility 2015.12 Dec 30 2015
+# vmap work rtl_work 
+# Copying D:/Aplikacje/Quartus/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# 
+# vlog -vlog01compat -work work +incdir+E:/Pulpit/FinalCPU {E:/Pulpit/FinalCPU/CPU.v}
+# Model Technology ModelSim ALTERA vlog 10.4d Compiler 2015.12 Dec 30 2015
+# Start time: 19:08:39 on Sep 22,2019
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+E:/Pulpit/FinalCPU" E:/Pulpit/FinalCPU/CPU.v 
+# -- Compiling module CPU
+# 
+# Top level modules:
+# 	CPU
+# End time: 19:08:39 on Sep 22,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+E:/Pulpit/FinalCPU {E:/Pulpit/FinalCPU/PC_Counter.v}
+# Model Technology ModelSim ALTERA vlog 10.4d Compiler 2015.12 Dec 30 2015
+# Start time: 19:08:39 on Sep 22,2019
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+E:/Pulpit/FinalCPU" E:/Pulpit/FinalCPU/PC_Counter.v 
+# -- Compiling module PC_COUNTER
+# 
+# Top level modules:
+# 	PC_COUNTER
+# End time: 19:08:40 on Sep 22,2019, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+E:/Pulpit/FinalCPU {E:/Pulpit/FinalCPU/PCRam.v}
+# Model Technology ModelSim ALTERA vlog 10.4d Compiler 2015.12 Dec 30 2015
+# Start time: 19:08:40 on Sep 22,2019
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+E:/Pulpit/FinalCPU" E:/Pulpit/FinalCPU/PCRam.v 
+# -- Compiling module CPU_ROM
+# 
+# Top level modules:
+# 	CPU_ROM
+# End time: 19:08:40 on Sep 22,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+E:/Pulpit/FinalCPU {E:/Pulpit/FinalCPU/EXE.v}
+# Model Technology ModelSim ALTERA vlog 10.4d Compiler 2015.12 Dec 30 2015
+# Start time: 19:08:40 on Sep 22,2019
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+E:/Pulpit/FinalCPU" E:/Pulpit/FinalCPU/EXE.v 
+# -- Compiling module CONTROL_UNIT
+# 
+# Top level modules:
+# 	CONTROL_UNIT
+# End time: 19:08:40 on Sep 22,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+E:/Pulpit/FinalCPU {E:/Pulpit/FinalCPU/CPU_BitUnit.v}
+# Model Technology ModelSim ALTERA vlog 10.4d Compiler 2015.12 Dec 30 2015
+# Start time: 19:08:40 on Sep 22,2019
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+E:/Pulpit/FinalCPU" E:/Pulpit/FinalCPU/CPU_BitUnit.v 
+# -- Compiling module BIT_UNIT
+# 
+# Top level modules:
+# 	BIT_UNIT
+# End time: 19:08:40 on Sep 22,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+E:/Pulpit/FinalCPU {E:/Pulpit/FinalCPU/LU.v}
+# Model Technology ModelSim ALTERA vlog 10.4d Compiler 2015.12 Dec 30 2015
+# Start time: 19:08:41 on Sep 22,2019
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+E:/Pulpit/FinalCPU" E:/Pulpit/FinalCPU/LU.v 
+# -- Compiling module LU
+# 
+# Top level modules:
+# 	LU
+# End time: 19:08:41 on Sep 22,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+E:/Pulpit/FinalCPU {E:/Pulpit/FinalCPU/ALU.v}
+# Model Technology ModelSim ALTERA vlog 10.4d Compiler 2015.12 Dec 30 2015
+# Start time: 19:08:41 on Sep 22,2019
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+E:/Pulpit/FinalCPU" E:/Pulpit/FinalCPU/ALU.v 
+# -- Compiling module ALU
+# 
+# Top level modules:
+# 	ALU
+# End time: 19:08:41 on Sep 22,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+E:/Pulpit/FinalCPU {E:/Pulpit/FinalCPU/OV_Reg.v}
+# Model Technology ModelSim ALTERA vlog 10.4d Compiler 2015.12 Dec 30 2015
+# Start time: 19:08:41 on Sep 22,2019
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+E:/Pulpit/FinalCPU" E:/Pulpit/FinalCPU/OV_Reg.v 
+# -- Compiling module OV_REG
+# 
+# Top level modules:
+# 	OV_REG
+# End time: 19:08:41 on Sep 22,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+E:/Pulpit/FinalCPU {E:/Pulpit/FinalCPU/ALU_Mux.v}
+# Model Technology ModelSim ALTERA vlog 10.4d Compiler 2015.12 Dec 30 2015
+# Start time: 19:08:41 on Sep 22,2019
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+E:/Pulpit/FinalCPU" E:/Pulpit/FinalCPU/ALU_Mux.v 
+# -- Compiling module ALU_MUX
+# 
+# Top level modules:
+# 	ALU_MUX
+# End time: 19:08:41 on Sep 22,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+E:/Pulpit/FinalCPU {E:/Pulpit/FinalCPU/CPU_WordUnit.v}
+# Model Technology ModelSim ALTERA vlog 10.4d Compiler 2015.12 Dec 30 2015
+# Start time: 19:08:42 on Sep 22,2019
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+E:/Pulpit/FinalCPU" E:/Pulpit/FinalCPU/CPU_WordUnit.v 
+# -- Compiling module WORD_UNIT
+# 
+# Top level modules:
+# 	WORD_UNIT
+# End time: 19:08:42 on Sep 22,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+E:/Pulpit/FinalCPU {E:/Pulpit/FinalCPU/Programmer.v}
+# Model Technology ModelSim ALTERA vlog 10.4d Compiler 2015.12 Dec 30 2015
+# Start time: 19:08:42 on Sep 22,2019
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+E:/Pulpit/FinalCPU" E:/Pulpit/FinalCPU/Programmer.v 
+# -- Compiling module PROGRAMMER
+# 
+# Top level modules:
+# 	PROGRAMMER
+# End time: 19:08:42 on Sep 22,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+E:/Pulpit/FinalCPU {E:/Pulpit/FinalCPU/StatesController.v}
+# Model Technology ModelSim ALTERA vlog 10.4d Compiler 2015.12 Dec 30 2015
+# Start time: 19:08:42 on Sep 22,2019
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+E:/Pulpit/FinalCPU" E:/Pulpit/FinalCPU/StatesController.v 
+# -- Compiling module STATES_CONTROLLER
+# 
+# Top level modules:
+# 	STATES_CONTROLLER
+# End time: 19:08:42 on Sep 22,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+E:/Pulpit/FinalCPU {E:/Pulpit/FinalCPU/RLO_A.v}
+# Model Technology ModelSim ALTERA vlog 10.4d Compiler 2015.12 Dec 30 2015
+# Start time: 19:08:42 on Sep 22,2019
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+E:/Pulpit/FinalCPU" E:/Pulpit/FinalCPU/RLO_A.v 
+# -- Compiling module RLO_REG
+# 
+# Top level modules:
+# 	RLO_REG
+# End time: 19:08:42 on Sep 22,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+E:/Pulpit/FinalCPU {E:/Pulpit/FinalCPU/RLO_REG.v}
+# Model Technology ModelSim ALTERA vlog 10.4d Compiler 2015.12 Dec 30 2015
+# Start time: 19:08:42 on Sep 22,2019
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+E:/Pulpit/FinalCPU" E:/Pulpit/FinalCPU/RLO_REG.v 
+# -- Compiling module ARG_REG
+# 
+# Top level modules:
+# 	ARG_REG
+# End time: 19:08:42 on Sep 22,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+E:/Pulpit/FinalCPU {E:/Pulpit/FinalCPU/ACCU_B.v}
+# Model Technology ModelSim ALTERA vlog 10.4d Compiler 2015.12 Dec 30 2015
+# Start time: 19:08:42 on Sep 22,2019
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+E:/Pulpit/FinalCPU" E:/Pulpit/FinalCPU/ACCU_B.v 
+# -- Compiling module ACCU
+# 
+# Top level modules:
+# 	ACCU
+# End time: 19:08:43 on Sep 22,2019, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+E:/Pulpit/FinalCPU {E:/Pulpit/FinalCPU/REGISTERS.v}
+# Model Technology ModelSim ALTERA vlog 10.4d Compiler 2015.12 Dec 30 2015
+# Start time: 19:08:43 on Sep 22,2019
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+E:/Pulpit/FinalCPU" E:/Pulpit/FinalCPU/REGISTERS.v 
+# -- Compiling module REGISTERS
+# 
+# Top level modules:
+# 	REGISTERS
+# End time: 19:08:43 on Sep 22,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+E:/Pulpit/FinalCPU {E:/Pulpit/FinalCPU/SEMAPHORE_ROUTER.v}
+# Model Technology ModelSim ALTERA vlog 10.4d Compiler 2015.12 Dec 30 2015
+# Start time: 19:08:43 on Sep 22,2019
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+E:/Pulpit/FinalCPU" E:/Pulpit/FinalCPU/SEMAPHORE_ROUTER.v 
+# -- Compiling module SEMAPHORE_ROUTER
+# 
+# Top level modules:
+# 	SEMAPHORE_ROUTER
+# End time: 19:08:43 on Sep 22,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+E:/Pulpit/FinalCPU {E:/Pulpit/FinalCPU/SEMAPHORE_UNIT.v}
+# Model Technology ModelSim ALTERA vlog 10.4d Compiler 2015.12 Dec 30 2015
+# Start time: 19:08:43 on Sep 22,2019
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+E:/Pulpit/FinalCPU" E:/Pulpit/FinalCPU/SEMAPHORE_UNIT.v 
+# -- Compiling module SEMAPHORE_UNIT
+# 
+# Top level modules:
+# 	SEMAPHORE_UNIT
+# End time: 19:08:43 on Sep 22,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+E:/Pulpit/FinalCPU {E:/Pulpit/FinalCPU/SEMAPHORE_ARRAY.v}
+# Model Technology ModelSim ALTERA vlog 10.4d Compiler 2015.12 Dec 30 2015
+# Start time: 19:08:44 on Sep 22,2019
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+E:/Pulpit/FinalCPU" E:/Pulpit/FinalCPU/SEMAPHORE_ARRAY.v 
+# -- Compiling module SEMAPHORE_ARRAY
+# 
+# Top level modules:
+# 	SEMAPHORE_ARRAY
+# End time: 19:08:44 on Sep 22,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+E:/Pulpit/FinalCPU {E:/Pulpit/FinalCPU/COMPARATOR_REG.v}
+# Model Technology ModelSim ALTERA vlog 10.4d Compiler 2015.12 Dec 30 2015
+# Start time: 19:08:44 on Sep 22,2019
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+E:/Pulpit/FinalCPU" E:/Pulpit/FinalCPU/COMPARATOR_REG.v 
+# -- Compiling module COMPARATOR_REG
+# 
+# Top level modules:
+# 	COMPARATOR_REG
+# End time: 19:08:44 on Sep 22,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+E:/Pulpit/FinalCPU {E:/Pulpit/FinalCPU/SEMAPHORE_DATAROUTER.v}
+# Model Technology ModelSim ALTERA vlog 10.4d Compiler 2015.12 Dec 30 2015
+# Start time: 19:08:44 on Sep 22,2019
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+E:/Pulpit/FinalCPU" E:/Pulpit/FinalCPU/SEMAPHORE_DATAROUTER.v 
+# -- Compiling module SEMAPHORE_DATADECODER
+# 
+# Top level modules:
+# 	SEMAPHORE_DATADECODER
+# End time: 19:08:44 on Sep 22,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+E:/Pulpit/FinalCPU {E:/Pulpit/FinalCPU/SEMAPHORE_ENABLER.v}
+# Model Technology ModelSim ALTERA vlog 10.4d Compiler 2015.12 Dec 30 2015
+# Start time: 19:08:44 on Sep 22,2019
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+E:/Pulpit/FinalCPU" E:/Pulpit/FinalCPU/SEMAPHORE_ENABLER.v 
+# -- Compiling module SEMAPHORE_ENABLE_ROUTER
+# 
+# Top level modules:
+# 	SEMAPHORE_ENABLE_ROUTER
+# End time: 19:08:44 on Sep 22,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+E:/Pulpit/FinalCPU {E:/Pulpit/FinalCPU/SEMAPHORE_AVAILABILITYENCODER.v}
+# Model Technology ModelSim ALTERA vlog 10.4d Compiler 2015.12 Dec 30 2015
+# Start time: 19:08:44 on Sep 22,2019
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+E:/Pulpit/FinalCPU" E:/Pulpit/FinalCPU/SEMAPHORE_AVAILABILITYENCODER.v 
+# -- Compiling module SEMAPHORE_BLOCKINGMUX
+# 
+# Top level modules:
+# 	SEMAPHORE_BLOCKINGMUX
+# End time: 19:08:45 on Sep 22,2019, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+E:/Pulpit/FinalCPU {E:/Pulpit/FinalCPU/SEMAPHORE_WE_CONTROLLER.v}
+# Model Technology ModelSim ALTERA vlog 10.4d Compiler 2015.12 Dec 30 2015
+# Start time: 19:08:45 on Sep 22,2019
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+E:/Pulpit/FinalCPU" E:/Pulpit/FinalCPU/SEMAPHORE_WE_CONTROLLER.v 
+# -- Compiling module SEMAPHORE_WE_CONTROL
+# 
+# Top level modules:
+# 	SEMAPHORE_WE_CONTROL
+# End time: 19:08:45 on Sep 22,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+E:/Pulpit/FinalCPU {E:/Pulpit/FinalCPU/SEMAPHORE_SET_CONTROLLER.v}
+# Model Technology ModelSim ALTERA vlog 10.4d Compiler 2015.12 Dec 30 2015
+# Start time: 19:08:45 on Sep 22,2019
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+E:/Pulpit/FinalCPU" E:/Pulpit/FinalCPU/SEMAPHORE_SET_CONTROLLER.v 
+# -- Compiling module SEMAPHORE_WR_CONTROLLER
+# 
+# Top level modules:
+# 	SEMAPHORE_WR_CONTROLLER
+# End time: 19:08:45 on Sep 22,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+E:/Pulpit/FinalCPU {E:/Pulpit/FinalCPU/SEMAPHORE_DATA_CONTROLLER.v}
+# Model Technology ModelSim ALTERA vlog 10.4d Compiler 2015.12 Dec 30 2015
+# Start time: 19:08:45 on Sep 22,2019
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+E:/Pulpit/FinalCPU" E:/Pulpit/FinalCPU/SEMAPHORE_DATA_CONTROLLER.v 
+# -- Compiling module SEMAPHORE_DATA_CONTROLLER
+# 
+# Top level modules:
+# 	SEMAPHORE_DATA_CONTROLLER
+# End time: 19:08:45 on Sep 22,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+E:/Pulpit/FinalCPU {E:/Pulpit/FinalCPU/RAM.v}
+# Model Technology ModelSim ALTERA vlog 10.4d Compiler 2015.12 Dec 30 2015
+# Start time: 19:08:45 on Sep 22,2019
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+E:/Pulpit/FinalCPU" E:/Pulpit/FinalCPU/RAM.v 
+# -- Compiling module RAM
+# 
+# Top level modules:
+# 	RAM
+# End time: 19:08:45 on Sep 22,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+E:/Pulpit/FinalCPU {E:/Pulpit/FinalCPU/PERIPHERIALS.v}
+# Model Technology ModelSim ALTERA vlog 10.4d Compiler 2015.12 Dec 30 2015
+# Start time: 19:08:46 on Sep 22,2019
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+E:/Pulpit/FinalCPU" E:/Pulpit/FinalCPU/PERIPHERIALS.v 
+# -- Compiling module WORD_PERIPHERALS
+# 
+# Top level modules:
+# 	WORD_PERIPHERALS
+# End time: 19:08:46 on Sep 22,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+E:/Pulpit/FinalCPU {E:/Pulpit/FinalCPU/INPUT_REGISTERS.v}
+# Model Technology ModelSim ALTERA vlog 10.4d Compiler 2015.12 Dec 30 2015
+# Start time: 19:08:46 on Sep 22,2019
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+E:/Pulpit/FinalCPU" E:/Pulpit/FinalCPU/INPUT_REGISTERS.v 
+# -- Compiling module INPUT_REGISTERS
+# 
+# Top level modules:
+# 	INPUT_REGISTERS
+# End time: 19:08:46 on Sep 22,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+E:/Pulpit/FinalCPU {E:/Pulpit/FinalCPU/BIT_PERIPHERALS.v}
+# Model Technology ModelSim ALTERA vlog 10.4d Compiler 2015.12 Dec 30 2015
+# Start time: 19:08:46 on Sep 22,2019
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+E:/Pulpit/FinalCPU" E:/Pulpit/FinalCPU/BIT_PERIPHERALS.v 
+# -- Compiling module BIT_PERIPHERALS
+# 
+# Top level modules:
+# 	BIT_PERIPHERALS
+# End time: 19:08:46 on Sep 22,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+E:/Pulpit/FinalCPU {E:/Pulpit/FinalCPU/OUTPUT_REGISTERS.v}
+# Model Technology ModelSim ALTERA vlog 10.4d Compiler 2015.12 Dec 30 2015
+# Start time: 19:08:46 on Sep 22,2019
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+E:/Pulpit/FinalCPU" E:/Pulpit/FinalCPU/OUTPUT_REGISTERS.v 
+# -- Compiling module OUTPUT_REGISTERS
+# 
+# Top level modules:
+# 	OUTPUT_REGISTERS
+# End time: 19:08:46 on Sep 22,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+E:/Pulpit/FinalCPU {E:/Pulpit/FinalCPU/CORES.v}
+# Model Technology ModelSim ALTERA vlog 10.4d Compiler 2015.12 Dec 30 2015
+# Start time: 19:08:46 on Sep 22,2019
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+E:/Pulpit/FinalCPU" E:/Pulpit/FinalCPU/CORES.v 
+# -- Compiling module CORES
+# 
+# Top level modules:
+# 	CORES
+# End time: 19:08:46 on Sep 22,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+E:/Pulpit/FinalCPU {E:/Pulpit/FinalCPU/WORD_WRITE_ARBITER.v}
+# Model Technology ModelSim ALTERA vlog 10.4d Compiler 2015.12 Dec 30 2015
+# Start time: 19:08:46 on Sep 22,2019
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+E:/Pulpit/FinalCPU" E:/Pulpit/FinalCPU/WORD_WRITE_ARBITER.v 
+# -- Compiling module WRITE_ARBITER
+# 
+# Top level modules:
+# 	WRITE_ARBITER
+# End time: 19:08:47 on Sep 22,2019, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+E:/Pulpit/FinalCPU {E:/Pulpit/FinalCPU/WORD_READ_ARBITER.v}
+# Model Technology ModelSim ALTERA vlog 10.4d Compiler 2015.12 Dec 30 2015
+# Start time: 19:08:47 on Sep 22,2019
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+E:/Pulpit/FinalCPU" E:/Pulpit/FinalCPU/WORD_READ_ARBITER.v 
+# -- Compiling module READ_ARBITER
+# 
+# Top level modules:
+# 	READ_ARBITER
+# End time: 19:08:47 on Sep 22,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+E:/Pulpit/FinalCPU {E:/Pulpit/FinalCPU/CORE_ARBITER.v}
+# Model Technology ModelSim ALTERA vlog 10.4d Compiler 2015.12 Dec 30 2015
+# Start time: 19:08:47 on Sep 22,2019
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+E:/Pulpit/FinalCPU" E:/Pulpit/FinalCPU/CORE_ARBITER.v 
+# -- Compiling module WORDCORE_ARBITER
+# 
+# Top level modules:
+# 	WORDCORE_ARBITER
+# End time: 19:08:47 on Sep 22,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+E:/Pulpit/FinalCPU {E:/Pulpit/FinalCPU/CPU_UNIT.v}
+# Model Technology ModelSim ALTERA vlog 10.4d Compiler 2015.12 Dec 30 2015
+# Start time: 19:08:47 on Sep 22,2019
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+E:/Pulpit/FinalCPU" E:/Pulpit/FinalCPU/CPU_UNIT.v 
+# -- Compiling module CPU_UNIT
+# 
+# Top level modules:
+# 	CPU_UNIT
+# End time: 19:08:48 on Sep 22,2019, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+E:/Pulpit/FinalCPU {E:/Pulpit/FinalCPU/PERIPHERIALS2.v}
+# Model Technology ModelSim ALTERA vlog 10.4d Compiler 2015.12 Dec 30 2015
+# Start time: 19:08:48 on Sep 22,2019
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+E:/Pulpit/FinalCPU" E:/Pulpit/FinalCPU/PERIPHERIALS2.v 
+# -- Compiling module PERIPHERALS
+# 
+# Top level modules:
+# 	PERIPHERALS
+# End time: 19:08:48 on Sep 22,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+E:/Pulpit/FinalCPU {E:/Pulpit/FinalCPU/JMP_mux.v}
+# Model Technology ModelSim ALTERA vlog 10.4d Compiler 2015.12 Dec 30 2015
+# Start time: 19:08:48 on Sep 22,2019
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+E:/Pulpit/FinalCPU" E:/Pulpit/FinalCPU/JMP_mux.v 
+# -- Compiling module JMP_MUX
+# 
+# Top level modules:
+# 	JMP_MUX
+# End time: 19:08:48 on Sep 22,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+E:/Pulpit/FinalCPU {E:/Pulpit/FinalCPU/BITCORE_ARBITER.v}
+# Model Technology ModelSim ALTERA vlog 10.4d Compiler 2015.12 Dec 30 2015
+# Start time: 19:08:48 on Sep 22,2019
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+E:/Pulpit/FinalCPU" E:/Pulpit/FinalCPU/BITCORE_ARBITER.v 
+# -- Compiling module BITCORE_ARBITER
+# 
+# Top level modules:
+# 	BITCORE_ARBITER
+# End time: 19:08:48 on Sep 22,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+E:/Pulpit/FinalCPU {E:/Pulpit/FinalCPU/BITWRITE_ARBITER.v}
+# Model Technology ModelSim ALTERA vlog 10.4d Compiler 2015.12 Dec 30 2015
+# Start time: 19:08:48 on Sep 22,2019
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+E:/Pulpit/FinalCPU" E:/Pulpit/FinalCPU/BITWRITE_ARBITER.v 
+# -- Compiling module BITWRITE_ARBITER
+# 
+# Top level modules:
+# 	BITWRITE_ARBITER
+# End time: 19:08:48 on Sep 22,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+E:/Pulpit/FinalCPU {E:/Pulpit/FinalCPU/BITREAD_ARBITER.v}
+# Model Technology ModelSim ALTERA vlog 10.4d Compiler 2015.12 Dec 30 2015
+# Start time: 19:08:48 on Sep 22,2019
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+E:/Pulpit/FinalCPU" E:/Pulpit/FinalCPU/BITREAD_ARBITER.v 
+# -- Compiling module BITREAD_ARBITER
+# 
+# Top level modules:
+# 	BITREAD_ARBITER
+# End time: 19:08:49 on Sep 22,2019, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+E:/Pulpit/FinalCPU {E:/Pulpit/FinalCPU/SEMAPHORE_BLOCKER.v}
+# Model Technology ModelSim ALTERA vlog 10.4d Compiler 2015.12 Dec 30 2015
+# Start time: 19:08:49 on Sep 22,2019
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+E:/Pulpit/FinalCPU" E:/Pulpit/FinalCPU/SEMAPHORE_BLOCKER.v 
+# -- Compiling module SEMAPHORE_BLOCKER
+# 
+# Top level modules:
+# 	SEMAPHORE_BLOCKER
+# End time: 19:08:49 on Sep 22,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+E:/Pulpit/FinalCPU {E:/Pulpit/FinalCPU/cpu_world.v}
+# Model Technology ModelSim ALTERA vlog 10.4d Compiler 2015.12 Dec 30 2015
+# Start time: 19:08:49 on Sep 22,2019
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+E:/Pulpit/FinalCPU" E:/Pulpit/FinalCPU/cpu_world.v 
+# -- Compiling module CPU_WORLD
+# 
+# Top level modules:
+# 	CPU_WORLD
+# End time: 19:08:49 on Sep 22,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+vsim work.CPU_WORLD
+# vsim work.CPU_WORLD 
+# Start time: 19:09:30 on Sep 22,2019
+# Loading work.CPU_WORLD
+# Loading work.CPU_UNIT
+# Loading work.STATES_CONTROLLER
+# Loading work.CORES
+# Loading work.PROGRAMMER
+# Loading work.PERIPHERALS
+# Loading work.WORD_PERIPHERALS
+# Loading work.RAM
+# Loading work.BIT_PERIPHERALS
+# Loading work.INPUT_REGISTERS
+# Loading work.OUTPUT_REGISTERS
+# Loading work.CPU
+# Loading work.PC_COUNTER
+# Loading work.CPU_ROM
+# Loading work.REGISTERS
+# Loading work.BIT_UNIT
+# Loading work.RLO_REG
+# Loading work.ARG_REG
+# Loading work.LU
+# Loading work.WORD_UNIT
+# Loading work.ACCU
+# Loading work.ALU
+# Loading work.ALU_MUX
+# Loading work.COMPARATOR_REG
+# Loading work.OV_REG
+# Loading work.CONTROL_UNIT
+# Loading work.JMP_MUX
+# Loading work.SEMAPHORE_ROUTER
+# Loading work.SEMAPHORE_ENABLE_ROUTER
+# Loading work.SEMAPHORE_WE_CONTROL
+# Loading work.SEMAPHORE_WR_CONTROLLER
+# Loading work.SEMAPHORE_DATA_CONTROLLER
+# Loading work.SEMAPHORE_BLOCKINGMUX
+# Loading work.SEMAPHORE_DATADECODER
+# Loading work.SEMAPHORE_ARRAY
+# Loading work.WORDCORE_ARBITER
+# Loading work.WRITE_ARBITER
+# Loading work.READ_ARBITER
+# Loading work.BITCORE_ARBITER
+# Loading work.BITWRITE_ARBITER
+# Loading work.BITREAD_ARBITER
+# Loading work.SEMAPHORE_UNIT
+# Loading work.SEMAPHORE_BLOCKER
+# End time: 19:09:44 on Sep 22,2019, Elapsed time: 0:00:14
+# Errors: 0, Warnings: 0

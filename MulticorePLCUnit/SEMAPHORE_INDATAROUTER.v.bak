@@ -1,0 +1,29 @@
+module SEMAPHORE_INDATAROUTER
+(
+	//Data from CPU to AddrDecoder:
+	input  wire																SEMAPHOREINDATAROUTER_CPUData,
+	//Data from AddrDecoder to Semaphores:
+	output  wire [(NumberOfSemaphores*NumberOfCores)-1: 0]	SEMAPHOREINDATAROUTER_InputData,
+	
+	//Addr from AddrDecoder to Semaphore:
+	output wire [(NumberOfSemaphores*NumberOfCores)-1: 0]		SEMAPHOREINDATAROUTER_OutputAddr
+);
+
+localparam NumberOfSemaphores = 8;
+localparam NumberOfCores 		= 2;
+
+
+
+genvar i;
+generate
+	for (i=0; i<(NumberOfSemaphores*NumberOfCores); i=i+1) 
+	begin 
+		: generate_semBuffer_id
+		//Data from AddrDecoder to Semaphores
+		assign SEMAPHOREINDATAROUTER_InputData[i]  = (SEMAPHOREINDATAROUTER_OutputAddr[i]) ? SEMAPHOREINDATAROUTER_CPUData : 1'bz;
+	end
+endgenerate
+
+
+
+endmodule

@@ -1,0 +1,24 @@
+module SEMAPHORE_DATA_CONTROLLER
+(
+	input wire 																SEMAPHOREDATACONTROLLER_Data_fromCPU,
+	//WE decoder
+	input wire  [(NumberOfSemaphores*NumberOfCores)-1: 0] 	SEMAPHOREDATACONTROLLER_WE_buffer,
+	
+	output wire [(NumberOfSemaphores*NumberOfCores)-1: 0]		SEMAPHOREDATACONTROLLER_Data_toSemaphore
+);
+
+localparam NumberOfSemaphores = 8;
+localparam NumberOfCores 		= 2;
+
+genvar i;
+generate
+	for (i=0; i<(NumberOfSemaphores*NumberOfCores); i=i+1) 
+	begin 
+		: generate_DATA_CONTROLLER_id
+
+		assign SEMAPHOREDATACONTROLLER_Data_toSemaphore[i] = (SEMAPHOREDATACONTROLLER_WE_buffer[i]) ? SEMAPHOREDATACONTROLLER_Data_fromCPU : 1'bz;
+		
+	end
+endgenerate
+
+endmodule

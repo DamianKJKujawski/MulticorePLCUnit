@@ -1,0 +1,23 @@
+module TIMER_COUNTER
+(
+	input wire CLK,
+	input wire CPU_Reset,
+	
+	input wire TIMERCOUNTER_EN
+
+);
+
+always @(posedge CLK)
+begin
+	if(CPU_Reset)
+	begin
+		_TIMER_COUNTER 	 <= 0;
+	end	
+	else if(!TIMER_EN && _prescaler_OV)
+	begin
+		if(_TIMER_CONFIG[6])
+			_TIMER_COUNTER <= _TIMER_COUNTER + 1'b1;
+		else if(_TIMER_COUNTER != _TIMER_ZERO)
+			_TIMER_COUNTER <= _TIMER_COUNTER - 1'b1;
+	end
+end

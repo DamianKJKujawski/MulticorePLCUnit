@@ -1,0 +1,52 @@
+module PCRAM
+(
+	input 			  						clk,
+
+	input 	  [(CounterBits - 1):0] PCRam_Addr,
+	input 	  [(FetchBits   - 1):0] PCRam_InputData,
+	
+	input 			  						PCRam_WriteEnable,
+	input 	  [(CounterBits - 1):0] PCRAM_OutputData
+);
+//				PARAMETERS
+
+localparam CounterBits = 4;
+localparam FetchBits   = 8;
+
+//				WIRES & REGS
+
+
+reg  [7:0] RAM[15:0];
+reg  [3:0] AddrReg;
+	
+//				DESCRIPTION
+always @ (posedge clk)
+begin
+	if (Write_Enable)
+	begin
+		RAM[Addr] <= Input_Data;
+	end
+	
+	AddrReg <= Addr;
+end
+	
+assign PCRAM_OutputData = RAM[AddrReg];
+
+	
+	
+	
+initial
+begin
+	
+	integer i;
+	
+	AddrReg = 8'd0;
+	
+	for (i=1; i<=NumberOfCores; i=i+1)
+	begin
+		RAM[i]  = 8'd0;
+	end
+
+end
+	
+endmodule

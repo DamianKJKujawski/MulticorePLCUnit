@@ -1,0 +1,42 @@
+module StateReg
+(
+	input 			  						clk,
+
+	input 	  [(FetchBits - 1) : 0] InputData,
+	input 	  								DataCarry,
+
+	output 	  [(FetchBits - 1) : 0] OutputData
+);
+
+
+
+//				PARAMETERS
+localparam FetchBits   = 8;
+
+//				WIRES & REGS
+reg  [FetchBits - 1 : 0] DataReg;
+	
+//				DESCRIPTION
+
+always @(posedge clk)
+begin
+	if(DataCarry)
+	begin
+		DataReg <= InputData;
+	end
+end
+
+
+integer i
+
+always @(*)
+begin
+	for (i=0; i<FetchBits; i=i+1)
+	begin
+		
+	end
+end
+
+	
+
+endmodule 

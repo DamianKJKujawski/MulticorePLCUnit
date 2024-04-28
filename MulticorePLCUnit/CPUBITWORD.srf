@@ -1,0 +1,26 @@
+{ "" "" "" "Found entity 1: CPU_WORLD" {  } {  } 0 12023 "" 0 0 "Design Software" 0 -1 0 ""}
+{ "" "" "" "Net \"CLK\" is missing source, defaulting to GND" {  } {  } 0 12110 "" 0 0 "Design Software" 0 -1 0 ""}
+{ "" "" "" "Pin \"OUTPUTS\[0\]\" is stuck at GND" {  } {  } 0 13410 "" 0 0 "Design Software" 0 -1 0 ""}
+{ "" "" "" "Pin \"OUTPUTS\[1\]\" is stuck at GND" {  } {  } 0 13410 "" 0 0 "Design Software" 0 -1 0 ""}
+{ "" "" "" "Pin \"OUTPUTS\[2\]\" is stuck at GND" {  } {  } 0 13410 "" 0 0 "Design Software" 0 -1 0 ""}
+{ "" "" "" "Pin \"OUTPUTS\[3\]\" is stuck at GND" {  } {  } 0 13410 "" 0 0 "Design Software" 0 -1 0 ""}
+{ "" "" "" "Pin \"OUTPUTS\[4\]\" is stuck at GND" {  } {  } 0 13410 "" 0 0 "Design Software" 0 -1 0 ""}
+{ "" "" "" "Pin \"OUTPUTS\[5\]\" is stuck at GND" {  } {  } 0 13410 "" 0 0 "Design Software" 0 -1 0 ""}
+{ "" "" "" "Pin \"OUTPUTS\[6\]\" is stuck at GND" {  } {  } 0 13410 "" 0 0 "Design Software" 0 -1 0 ""}
+{ "" "" "" "Pin \"OUTPUTS\[7\]\" is stuck at GND" {  } {  } 0 13410 "" 0 0 "Design Software" 0 -1 0 ""}
+{ "" "" "" "Pin \"OUTPUTS\[8\]\" is stuck at GND" {  } {  } 0 13410 "" 0 0 "Design Software" 0 -1 0 ""}
+{ "" "" "" "Pin \"OUTPUTS\[9\]\" is stuck at GND" {  } {  } 0 13410 "" 0 0 "Design Software" 0 -1 0 ""}
+{ "" "" "" "Pin \"OUTPUTS\[10\]\" is stuck at GND" {  } {  } 0 13410 "" 0 0 "Design Software" 0 -1 0 ""}
+{ "" "" "" "Pin \"OUTPUTS\[11\]\" is stuck at GND" {  } {  } 0 13410 "" 0 0 "Design Software" 0 -1 0 ""}
+{ "" "" "" "Pin \"OUTPUTS\[12\]\" is stuck at GND" {  } {  } 0 13410 "" 0 0 "Design Software" 0 -1 0 ""}
+{ "" "" "" "Pin \"OUTPUTS\[13\]\" is stuck at GND" {  } {  } 0 13410 "" 0 0 "Design Software" 0 -1 0 ""}
+{ "" "" "" "Pin \"OUTPUTS\[14\]\" is stuck at GND" {  } {  } 0 13410 "" 0 0 "Design Software" 0 -1 0 ""}
+{ "" "" "" "Pin \"OUTPUTS\[15\]\" is stuck at GND" {  } {  } 0 13410 "" 0 0 "Design Software" 0 -1 0 ""}
+{ "" "" "" "Pin \"PROGRAMMER_ACK\" is stuck at GND" {  } {  } 0 13410 "" 0 0 "Design Software" 0 -1 0 ""}
+{ "" "" "" "Parallel compilation is not licensed and has been disabled" {  } {  } 0 20028 "" 0 0 "Design Software" 0 -1 0 ""}
+{ "" "" "" "Using design file cpu_world.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project" {  } {  } 0 12125 "" 0 0 "Design Software" 0 -1 0 ""}
+{ "" "" "" "Feature LogicLock is only available with a valid subscription license. You can purchase a software subscription to gain full access to this feature." {  } {  } 0 292013 "" 0 0 "Design Software" 0 -1 0 ""}
+{ "" "" "" "Some pins have incomplete I/O assignments. Refer to the I/O Assignment Warnings report for details" {  } {  } 0 15714 "" 0 0 "Design Software" 0 -1 0 ""}
+{ "" "" "" "No exact pin location assignment(s) for 17 pins of 17 total pins. For the list of pins please refer to the I/O Assignment Warnings table in the fitter report." {  } {  } 0 169085 "" 0 0 "Design Software" 0 -1 0 ""}
+{ "" "" "" "Synopsys Design Constraints File file not found: 'CPUBITWORD.sdc'. A Synopsys Design Constraints File is required by the TimeQuest Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design." {  } {  } 0 332012 "" 0 0 "Design Software" 0 -1 0 ""}
+{ "" "" "" "No clocks defined in design." {  } {  } 0 332068 "" 0 0 "Design Software" 0 -1 0 ""}

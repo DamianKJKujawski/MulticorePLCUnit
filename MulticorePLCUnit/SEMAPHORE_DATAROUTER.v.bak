@@ -1,0 +1,19 @@
+module SEMAPHORE_DATADECODER
+(
+	//Data from Semaphores to AddrDecoder:  
+	input wire [(NumberOfSemaphores*NumberOfCores)-1: 0]		SEMAPHOREDATADECODER_OutputData,
+	//Data from AddrDecoder to CPU:  
+	output wire 															SEMAPHOREDATADECODER_SemaphoreData,
+	
+	//Addr from CPU to AddrDecoder:
+	input  wire [7: 0]													SEMAPHOREDATADECODER_InputAddr
+);
+
+localparam NumberOfSemaphores = 8;
+localparam NumberOfCores 		= 2;
+
+
+
+assign SEMAPHOREADDRDECODER_SemaphoreData = SEMAPHOREADDRDECODER_OutputData[SEMAPHOREADDRDECODER_InputAddr];
+
+endmodule

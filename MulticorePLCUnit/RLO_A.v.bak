@@ -1,0 +1,30 @@
+module RLO_A
+(
+	// Basic:
+	input wire 			CLK,
+
+	input wire 			RLOA_BitEnable,
+	input wire 	[2:0]	RLO_OPCode,
+	
+	input wire 			RLOA_ArgToSet
+);
+
+
+always @(posedge CLK)
+begin
+	if(RLOA_BitEnable)
+	begin
+		case(RLO_OPCode)
+			3'b000:
+				RLO_A <= RLOA_ArgToSet;
+			3'b001:
+				RLO_A <= BITUNIT_RAMData;
+			3'b010:
+				RLO_A <= LU_Resoult;
+			3'b011:
+				RLO_A <= BITUNIT_OVResoult;
+			3'b100:
+				RLO_A <= BITUNIT_ComparatorResoult;
+		endcase
+	end
+end

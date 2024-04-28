@@ -1,0 +1,44 @@
+module WORD_READ_ARBITER
+(
+	//CLK:
+	input wire 			  CLK,
+	
+	//Carry in:
+	input wire 			  WORDREADARBITER_RR_PREV,
+		
+	//Driver data:
+	input wire 			  WORDREADARBITER_READ_REQUEST,
+	output wire  [7:0]  WORDREADARBITER_THREAD_DATA,
+	input wire   [7:0]  WORDREADARBITER_THREAD_ADDR,
+
+	//Output data:
+	input wire   [7:0]  WORDREADARBITER_RAM_DATA,
+	output wire  [7:0]  WORDREADARBITER_RAM_ADDR,
+	
+	//Ack:
+	output reg			  WORDREADARBITER_ACK,
+
+	//Carry out:
+	output wire 		  WORDREADARBITER_CARRY_OUT
+);
+
+reg	RR_reg;
+wire 	SELECTOR;
+
+always @(posedge CLK)
+begin
+	RR_reg 					 <= WORDREADARBITER_READ_REQUEST;
+	WORDREADARBITER_ACK 	 <= SELECTOR;
+end
+
+
+
+
+assign SELECTOR 							= (WORDREADARBITER_RR_PREV &&  WORDREADARBITER_RR_reg) ? 1'b1 : 1'b0;
+assign WORDREADARBITER_CARRY_OUT 	=  WORDREADARBITER_RR_PREV && ~WORDREADARBITER_RR_reg;
+
+assign WORDREADARBITER_THREAD_DATA 	= (SELECTOR) ? WORDREADARBITER_RAM_DATA 	 :  8'bz; 
+assign WORDREADARBITER_RAM_ADDR 		= (SELECTOR) ? WORDREADARBITER_THREAD_ADDR :  8'bz; 
+
+
+endmodule 

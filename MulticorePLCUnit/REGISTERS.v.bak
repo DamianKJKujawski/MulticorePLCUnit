@@ -1,0 +1,49 @@
+module REGISTERS
+(
+	//BASIC:
+	input 			  						CLK,
+	
+	//PROGRAMMER:
+	input 			  						REGISTERS_WE,
+	
+	input 	  [3:0] 						REGISTERS_ADDR,
+	input 	  [(FetchBits - 1):0] 	REGISTERS_DATA,
+	
+	//OUTPUT:
+	//Addr:
+	input 	  [(CounterBits - 1):0] REGISTERS_InstructionAddr,
+	//Data:
+	output 	  [(FetchBits - 1)  :0] PCRAM_OutputData
+);
+
+
+//	PARAMETERS
+localparam CounterBits = 4;
+localparam FetchBits   = 8;
+
+//	WIRES & REGS
+reg  [FetchBits   - 1 :0] RAM[((2^CounterBits) - 1):0];
+	
+//	DESCRIPTION
+always @ (posedge CLK)
+begin
+	if (PCRam_WE)
+	begin
+		RAM[PCRam_ProgrammerAddr] <= PCRam_ProgrammerData;
+	end
+end
+	
+assign PCRAM_OutputData 		= RAM[PCRam_InstructionAddr];
+
+//	TESTBENCH
+initial
+begin
+	integer i;
+	
+	for (i=0; i<(2^CounterBits); i=i+1)
+	begin
+		RAM[i] = {(FetchBits-1) {1'b0}};
+	end
+end
+	
+endmodule

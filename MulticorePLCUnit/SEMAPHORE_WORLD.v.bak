@@ -1,0 +1,37 @@
+module SEMAPHORE_WORLD
+(
+	//BASIC:
+	input 			  							CLK,
+	
+	input 										SEMAPHOREARRAY_WE,
+	input  [NumberOfSemaphores-1:  0]	SEMAPHOREARRAY_DATA,
+	
+	input  [NumberOfSemaphores-1:  0]  	SEMAPHOREARRAY_SET,
+	input  [NumberOfSemaphores-1:  0]	SEMAPHOREARRAY_READ,
+	
+	input  										SEMAPHOREARRAY_RESET,
+	
+	output [NumberOfSemaphores-1:  0]	SEMAPHOREARRAY_DataAvailability,
+	output [NumberOfSemaphores-1:  0]	SEMAPHOREARRAY_OutputData
+);
+
+localparam NumberOfCores = 4;
+
+genvar i;
+generate
+	for (i=0; i<NumberOfSemaphores; i=i+1) 
+	begin 
+		: generate_CPU_identifier
+		SEMAPHORE_ARRAY _SEMAPHORE_ARRAY
+		(
+
+		);
+	end
+endgenerate
+
+
+
+
+	
+	
+endmodule

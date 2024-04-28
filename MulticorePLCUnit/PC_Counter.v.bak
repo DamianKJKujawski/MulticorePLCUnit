@@ -1,0 +1,40 @@
+module PC_Counter
+(
+	input  		 	clk,
+	
+	input  		 	PC_Enable,
+	input  		 	PC_SetNewAddr,
+	input  		 	PC_SetJmp,
+
+	output 	[3:0] PCCounter_Value,
+	
+	
+);
+
+
+
+
+
+assign PC_CounterNewAddr = (PC_SetJmp) ? FETCH[3:0] : RAM_ExternalAddr;
+
+always @(posedge clk)
+begin 
+	if(PC_Enable)
+	begin
+		begin if(PC_SetNewAddr)
+			begin
+				PC_Counter <= PCCounter_Incremented;
+			end	
+			else begin
+				PC_Counter <= PC_CounterNewAddr;
+			end
+		end
+	end
+end
+
+
+INCREMENTER PCincrementer
+(
+	PCCounter_Value(PC_Counter),
+	PCCounter_Incremented(PCCounter_Incremented)
+);

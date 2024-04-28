@@ -1,0 +1,66 @@
+module SEMAPHORE_ROUTER
+(
+	//Data from CPU:
+	input   wire 															SEMAPHOREADDRDECODER_Data_fromCPU,
+	//Data to CPU:
+	output  wire 															SEMAPHOREADDRDECODER_Data_toCPU,
+	//Data between AddrDecoder and Semaphores:
+	input  wire [(NumberOfSemaphores*NumberOfCores)-1: 0]		SEMAPHOREADDRDECODER_Data_FromSemaphore,
+	output wire [(NumberOfSemaphores*NumberOfCores)-1: 0]		SEMAPHOREADDRDECODER_Data_ToSemaphore,
+
+	//Addr between CPU and Semaphore:
+	input  wire [7: 0]													SEMAPHOREADDRDECODER_Addr_FromCPU,
+	output wire [(NumberOfSemaphores*NumberOfCores)-1: 0]		SEMAPHOREADDRDECODER_WE_ToSemaphore,
+	
+	//Semaphore data availability:
+	input  wire [(NumberOfSemaphores*NumberOfCores)-1: 0]		SEMAPHOREADDRDECODER_Available_FromSemaphore,
+	output wire 															SEMAPHOREADDRDECODER_Available_toCPU,
+	//SET Signal: 
+	input  wire 															SEMAPHOREADDRDECODER_SET_FromCPU,
+	output wire [(NumberOfSemaphores*NumberOfCores)-1: 0]		SEMAPHOREADDRDECODER_SET_ToSemaphore,
+	//READ Signal:
+	input wire 																SEMAPHOREADDRDECODER_READ_FromCPU,
+	output wire [(NumberOfSemaphores*NumberOfCores)-1: 0]		SEMAPHOREADDRDECODER_READ_ToSemaphore
+);
+
+localparam NumberOfSemaphores = 8;
+localparam NumberOfCores 		= 2;
+
+SEMAPHORE_ENABLER _SEMAPHORE_ENABLER
+(
+	//Addr from CPU to AddrDecoder:
+	.SEMAPHOREENABLER_Addr_fromCPU(SEMAPHOREADDRDECODER_Addr_FromCPU),
+	//Addr from AddrDecoder to Semaphore:
+	.SEMAPHOREENABLER_WE_toSemaphore(SEMAPHOREADDRDECODER_WE_ToSemaphore),
+	//Set signal:
+	.SEMAPHOREADDRDECODER_SET_fromCPU(SEMAPHOREADDRDECODER_SET_FromCPU),
+	.SEMAPHOREADDRDECODER_SET_toSemaphore(SEMAPHOREADDRDECODER_SET_ToSemaphore),
+	//Read signal:
+	.SEMAPHOREADDRDECODER_READ_fromCPU(SEMAPHOREADDRDECODER_READ_FromCPU),
+	.SEMAPHOREADDRDECODER_READ_toSemaphore(SEMAPHOREADDRDECODER_READ_ToSemaphore),
+	//Data:
+	.SEMAPHOREADDRDECODER_Data_fromCPU(SEMAPHOREADDRDECODER_Data_fromCPU),
+	.SEMAPHOREINDATAROUTER_Data_toSemaphore(SEMAPHOREADDRDECODER_Data_ToSemaphore)
+);
+
+SEMAPHORE_AVAILABILITYENCODER _SEMAPHORE_AVAILABILITYENCODER
+(
+	//Data from Semaphores to CPU:  
+	.SEMAPHOREAVAILABILITYENCODER_Availability_fromSemaphore(SEMAPHOREADDRDECODER_Available_FromSemaphore), 
+	.SEMAPHOREAVAILABILITYENCODER_Availability_toCPU(SEMAPHOREADDRDECODER_Available_toCPU),
+	//Addr from CPU:
+	.SEMAPHOREAVAILABILITYENCODER_Addr_fromCPU(SEMAPHOREADDRDECODER_Addr_FromCPU)
+);
+
+SEMAPHORE_DATADECODER _SEMAPHORE_DATADECODER
+(
+	//Data from Semaphores to AddrDecoder:  
+	.SEMAPHOREDATADECODER_Data_fromSemaphore(SEMAPHOREADDRDECODER_Data_FromSemaphore),
+	//Data from AddrDecoder to CPU:  
+	.SEMAPHOREDATADECODER_Data_toCPU(SEMAPHOREADDRDECODER_Data_toCPU),
+	//Addr from CPU to AddrDecoder:
+	.SEMAPHOREDATADECODER_Addr_fromCPU(SEMAPHOREADDRDECODER_Addr_FromCPU)
+);
+
+
+endmodule

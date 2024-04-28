@@ -1,0 +1,18 @@
+module COMPARATOR_REG
+(
+	input wire			CLK,
+
+	input 		[3:0]	COMPARATORREG_OPCode,
+	
+	input 				COMPARATORREG__Result,
+	
+	output reg			COMPARATORREG__ComparatorResoult
+);
+
+always @(posedge CLK)
+begin
+	if(ALUMUX_OPCode > 4'b1001)
+	begin
+		ALUMUX_ComparatorResoult = ALUMUX_Result[0];
+	end
+end

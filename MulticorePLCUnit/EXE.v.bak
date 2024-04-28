@@ -1,0 +1,121 @@
+module CONTROL_UNIT
+(	
+	//Basic:
+	input wire 					CLK,
+	input wire					CPU_Reset,
+	
+	input wire [7:0] 		ROM_InputData,
+	
+	//Input signals:
+	//RAM:
+	input wire					RAM_ACK,
+	//SEMAPHORES:
+	input wire					SEMAPHORE_DataAvailability,
+
+	//Output signals:
+	//WORD UNIT:
+	output wire 				CONTROLUNIT_WORD_UNIT_B_WE,
+	output wire 				CONTROLUNIT_WORD_UNIT_A_WE,
+	
+	//BIT UNIT:
+	output wire 				CONTROLUNIT_BIT_UNIT_A_WE,
+	
+	//CORE REGISTERS:
+	output wire 				CONTROLUNIT_REGISTERS_WE,
+	output wire 				CONTROLUNIT_SetBitData,
+		
+	//RAM:
+	output wire					CONTROLUNIT_RAM_WR,
+	output wire					CONTROLUNIT_RAM_RR,
+	output wire [15:0] 	CONTROLUNIT_RAM_ADDR,
+	
+	//SEMAPHORES:
+	output wire					CONTROLUNIT_SEMAPHORE_SET,
+	output wire					CONTROLUNIT_SEMAPHORE_READ,
+	
+	//PC COUNTER:
+	output wire 				CONTROLUNIT_PC_COUNTER_Set_JMP,
+	output wire 				CONTROLUNIT_CPU_SetStop,
+	
+	//END
+	output wire 				CONTROLUNIT_CPU_END_Detected
+);		
+
+
+	reg [2:0] EXE_STATE;
+	
+	parameter IDLE = 3'b000;
+	
+	/*
+	reg EXE1_WORD_UNIT_B_WE;
+	reg EXE1_WORD_UNIT_A_WE;
+	reg EXE1_BIT_UNIT_A_WE;
+	reg EXE1_REGISTERS_WE;
+	reg EXE1_SetBitData;
+	reg EXE1_RAM_WR;
+	reg EXE1_RAM_RR;
+	reg EXE1_RAM_ADDR;
+	reg EXE1_SEMAPHORE_SET;
+	reg EXE1_SEMAPHORE_READ;
+	reg EXE1_PC_COUNTER_Set_JMP;
+	reg EXE1_CPU_SetStop;
+	reg EXE1_CPU_END_Detected;
+	
+	reg EXE2_WORD_UNIT_B_WE;
+	reg EXE2_WORD_UNIT_A_WE;
+	reg EXE2_BIT_UNIT_A_WE;
+	reg EXE2_REGISTERS_WE;
+	reg EXE2_SetBitData;
+	reg EXE2_RAM_WR;
+	reg EXE2_RAM_RR;
+	reg EXE2_RAM_ADDR;
+	reg EXE2_SEMAPHORE_SET;
+	reg EXE2_SEMAPHORE_READ;
+	reg EXE2_PC_COUNTER_Set_JMP;
+	reg EXE2_CPU_SetStop;
+	reg EXE2_CPU_END_Detected;
+	
+	assign CONTROLUNIT_WORD_UNIT_B_WE 		= EXE1_WORD_UNIT_B_WE 		|| EXE2_WORD_UNIT_B_WE;
+	assign CONTROLUNIT_WORD_UNIT_A_WE 		= EXE1_WORD_UNIT_A_WE 		|| EXE2_WORD_UNIT_A_WE;
+	assign CONTROLUNIT_BIT_UNIT_A_WE  		= EXE1_BIT_UNIT_A_WE  		|| EXE2_BIT_UNIT_A_WE;
+	assign CONTROLUNIT_REGISTERS_WE   		= EXE1_REGISTERS_WE   		|| EXE2_REGISTERS_WE;
+	assign CONTROLUNIT_SetBitData     		= EXE1_SetBitData					|| EXE2_SetBitData;
+	assign CONTROLUNIT_RAM_WR							= EXE1_RAM_WR							|| EXE2_RAM_WR;
+	assign CONTROLUNIT_RAM_RR							= EXE1_RAM_RR							|| EXE2_RAM_RR;
+	assign CONTROLUNIT_RAM_ADDR						= EXE1_RAM_ADDR						|| EXE2_RAM_ADDR;
+	assign CONTROLUNIT_SEMAPHORE_SET			= EXE1_SEMAPHORE_SET  		|| EXE2_SEMAPHORE_SET;
+	assign CONTROLUNIT_SEMAPHORE_READ 		= EXE1_SEMAPHORE_READ 		|| EXE2_SEMAPHORE_READ;
+	assign CONTROLUNIT_PC_COUNTER_Set_JMP = EXE1_PC_COUNTER_Set_JMP || EXE2_PC_COUNTER_Set_JMP;
+	assign CONTROLUNIT_CPU_SetStop				= EXE1_CPU_SetStop				|| EXE2_CPU_SetStop;
+	assign CONTROLUNIT_CPU_END_Detected		= EXE1_CPU_END_Detected   || EXE1_CPU_END_Detected;
+	*/
+	
+	assign CONTROLUNIT_WORD_UNIT_B_WE 		= 1'b0;
+	assign CONTROLUNIT_WORD_UNIT_A_WE 		= 1'b0;
+	assign CONTROLUNIT_REGISTERS_WE   		= 1'b0;
+	assign CONTROLUNIT_SetBitData     		= 1'b0;
+	assign CONTROLUNIT_RAM_WR							= 1'b0;
+	assign CONTROLUNIT_RAM_RR							= 1'b0;
+	assign CONTROLUNIT_RAM_ADDR						= 1'b0;
+	assign CONTROLUNIT_SEMAPHORE_SET			= 1'b0;
+	assign CONTROLUNIT_SEMAPHORE_READ 		= 1'b0;
+	assign CONTROLUNIT_PC_COUNTER_Set_JMP = 1'b0;
+	assign CONTROLUNIT_CPU_SetStop				= 1'b0;
+	assign CONTROLUNIT_CPU_END_Detected		= 1'b0;
+	
+	initial begin
+		EXE_STATE = IDLE;
+	end
+	
+	wire idleSignal = (EXE_STATE == IDLE) ? executeSignal : 1'b0;
+	wire executeSignal = !CPU_Reset;
+	
+	// 1 cycle instructions:
+	//EXE1:
+	assign CONTROLUNIT_BIT_UNIT_A_WE = ((ROM_InputData[7:4] == 4'b0001) && idleSignal);
+	
+	
+	
+
+
+endmodule 

@@ -1,0 +1,25 @@
+module SEMAPHORE_SET_CONTROLLER
+(
+	//Set signal:
+	input wire 																SEMAPHORESETCONTROLLER_SET_fromCPU,
+	//WE decoder
+	input wire  [(NumberOfSemaphores*NumberOfCores)-1: 0] 	SEMAPHORESETCONTROLLER_WE_buffer,
+	
+	output wire [(NumberOfSemaphores*NumberOfCores)-1: 0]		SEMAPHORESETCONTROLLER_SET_toSemaphore
+);
+
+localparam NumberOfSemaphores = 8;
+localparam NumberOfCores 		= 2;
+
+genvar i;
+generate
+	for (i=0; i<(NumberOfSemaphores*NumberOfCores); i=i+1) 
+	begin 
+		: generate_SET_CONTROLLER_id
+
+		assign SEMAPHORESETCONTROLLER_SET_toSemaphore[i] = (SEMAPHORESETCONTROLLER_SET_fromCPU) ? SEMAPHORESETCONTROLLER_WE_buffer[i] : 1'bz;
+		
+	end
+endgenerate
+
+endmodule

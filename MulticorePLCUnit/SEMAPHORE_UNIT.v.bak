@@ -1,0 +1,37 @@
+module SEMAPHORE_UNIT
+(
+	//BASIC:
+	input 			  						CLK,
+	
+	input 			  						SEMAPHOREUNIT_WE,
+	input 			  						SEMAPHOREUNIT_DATA,
+	
+	input 	  								SEMAPHOREUNIT_SET,
+	input 	  								SEMAPHOREUNIT_RESET,
+	
+	output 	  								SEMAPHOREUNIT_DataAvailability
+	output 	  								SEMAPHOREUNIT_OutputData
+);
+
+
+//	PARAMETERS
+localparam CounterBits = 4;
+localparam FetchBits   = 8;
+
+//	WIRES & REGS
+reg  [FetchBits   - 1 :0] RAM[((2^CounterBits) - 1):0];
+	
+//	DESCRIPTION
+always @ (posedge CLK)
+begin
+	if (PCRam_WE)
+	begin
+		RAM[PCRam_ProgrammerAddr] <= PCRam_ProgrammerData;
+	end
+end
+	
+assign PCRAM_OutputData 		= RAM[PCRam_InstructionAddr];
+
+
+	
+endmodule

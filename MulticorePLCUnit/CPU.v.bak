@@ -1,0 +1,276 @@
+	module CPU
+(
+	input	wire				CLK,
+		
+	//Programmer:
+	input wire	[3:0]		PROGRAMMER_Addr,
+	input wire	[7:0]		PROGRAMMER_Data,
+	//States Controller:
+	input wire				CPU_EN,
+	input wire				CPU_WE,
+	input wire				CPU_WE_ADDR,
+	input wire				CPU_Reset,
+	
+	output wire 			CPU_END_Detected,	
+	
+	//RAM:
+	input wire				RAM_ACK,
+	output wire [7:0] 	RAM_Data,
+	output wire [15:0] 	RAM_DataADDR,
+	output wire				RAM_WR,
+	output wire				RAM_RR,
+	
+	input wire [7:0] 		RAM_RAMData,
+	input wire [15:0] 	RAM_RAMADDR,
+	
+	//Semaphore:
+	input wire				SEMAPHORE_DataAvailability,
+	input wire 				SEMAPHORE_InputData,
+	output wire [7:0] 	SEMAPHORE_ADDR,
+	output wire 		  	SEMAPHORE_OutputData,
+	output wire				SEMAPHORE_SET,
+	output wire				SEMAPHORE_READ
+	
+
+);
+
+
+
+//  PARAMS:
+localparam CounterBits = 4;
+localparam FetchBits   = 8;
+
+
+
+//  PC Counter <-------------------------------------------
+wire [(FetchBits - 1) : 0] _PC_Counter;
+
+
+PC_COUNTER _PC_COUNTER
+(
+	//BASIC:
+	.CLK(CLK),
+	
+	.CPU_SetReset(CPU_Reset),
+	
+	//JUMP:
+	//Addr:
+	.PC_JMPAddr(_CPU_ROM_OutputData[3:0]),
+	//Driver inputs: 
+	.PC_SetJmp(_EXE_PC_COUNTER_Set_JMP),
+
+	.PC_SetStop(_EXE_CPU_SetStop || !CPU_EN),
+	
+	//OUTPUT ADDRESS:
+	.PC_Counter(_PC_Counter),
+);
+
+
+//  ROM        <-------------------------------------------
+wire [(FetchBits - 1) : 0] _CPU_ROM_OutputData;
+
+CPU_ROM _CPU_ROM
+(
+	//BASIC:
+	.CLK(CLK),
+	
+	//PROGRAMMER:
+	.PCRam_WE(CPU_WE),
+	.PCRam_EN(CPU_WE_ADDR),
+
+	.PCRam_ProgrammerData(PROGRAMMER_Data),
+	.PCRam_ProgrammerAddr(PROGRAMMER_Addr),
+	
+	//OUTPUT:
+	//Addr:
+	.PCRam_InstructionAddr(_PC_Counter),
+	//Data:
+	.PCRAM_OutputData(_CPU_ROM_OutputData)
+);
+
+
+//  DATA ROUTER         <-------------------------------------------
+wire [(FetchBits - 1) : 0] _DATAROUTER_CPUData;
+
+DATA_ROUTER _DATA_ROUTER
+(
+	//BASIC:
+	.CLK(CLK),
+	
+	.DATAROUTER_WriteData(_EXE_DATAROUTER_Write),
+	
+	//Input:
+	.DATAROUTER_WORDUNIT(_WORD_UNIT_A),
+	.DATAROUTER_BITUNIT(_BIT_UNIT_A),
+	
+	//OUTPUT:
+	//Addr:
+	.DATAROUTER_Addr(_EXE_DATAROUTER_Addr),
+	//Data:
+	.DATAROUTER_CPUData(_DATAROUTER_CPUData),
+	//IO:
+	.DATAROUTER_RAMData(RAM_Data)
+);
+
+
+//  REGISTERS         <-------------------------------------------
+wire [(FetchBits - 1) : 0]	_REGISTERS_OutputData;
+
+REGISTERS _REGISTERS
+(
+	.CLK(CLK),
+	
+	//INPUT:
+	.REGISTERS_WE(_EXE_RegisterWE),
+	.REGISTERS_SetBitData(_EXE_SetBitData),
+	
+	.REGISTERS_ADDR(_CPU_ROM_OutputData[2:0]),
+	
+	.REGISTERS_BitData(_BIT_UNIT_A),
+	.REGISTERS_WordData(_WORD_UNIT_A),
+	
+	//OUTPUT:
+	.REGISTERS_OutData(_REGISTERS_OutputData)
+);
+
+
+
+//  EXE         <-------------------------------------------
+//Word unit:
+wire _EXE_WORDUNIT_A_WE;
+wire _EXE_WORDUNIT_B_WE;
+//Bit unit:
+wire _EXE_BITUNIT_A_WE;
+
+//Program JMP:
+wire _EXE_CPU_SetStop;
+wire _EXE_PC_COUNTER_Set_JMP;
+
+//
+wire _EXE_REGISTERS_WE;
+wire _EXE_RAM_WR;
+wire _EXE_RAM_RR;
+wire _EXE_DATAROUTER_Addr;
+wire _EXE_DATAROUTER_Write;
+wire _EXE_RegisterWE;
+wire _EXE_SetBitData;
+//PC Counter:
+
+
+CONTROL_UNIT _CONTROL_UNIT
+(
+	//Basic:
+	.CLK(CLK),
+	
+	.CONTROLUNIT_InputData(_CPU_ROM_OutputData),
+	
+	.CONTROLUNIT_RAM_Ack(RAM_ACK),
+	//Outputs:
+	.CONTROLUNIT_RAM_Addr(RAM_DataADDR),
+	
+	.CONTROLUNIT_WORD_UNIT_B_WE(_EXE_WORDUNIT_B_WE),
+	.CONTROLUNIT_WORD_UNIT_A_WE(_EXE_WORDUNIT_A_WE),
+	.CONTROLUNIT_BIT_UNIT_A_WE(_EXE_BITUNIT_A_WE),
+	.CONTROLUNIT_BIT_UNIT_B_WE(_EXE_BITUNIT_B_WE),
+	
+	.CONTROLUNIT_REGISTERS_WE(_EXE_REGISTERS_WE),
+	
+	.CONTROLUNIT_PC_COUNTER_Set_JMP(_EXE_PC_COUNTER_Set_JMP),
+	
+	.CONTROLUNIT_RAM_WR(RAM_WR),
+	.CONTROLUNIT_RAM_RR(RAM_RR),
+	
+	.CONTROLUNIT_DATAROUTER_Addr(_EXE_DATAROUTER_Addr),
+	.CONTROLUNIT_DATAROUTER_Write(_EXE_DATAROUTER_Write),
+	
+	.CONTROLUNIT_RegisterWE(_EXE_RegisterWE),
+	.CONTROLUNIT_SetBitData(_EXE_SetBitData),
+	
+	.CONTROLUNIT_CPU_SetStop(_EXE_CPU_SetStop)
+);
+
+//SEMAPHORE_ROUTER _SEMAPHORE_ROUTER();
+
+
+//  LOGIC-ARITHMETIC UNITS  <--------------------------------------------------------------------------------|
+wire _BIT_UNIT_A;
+
+BIT_UNIT _BIT_UNIT
+(
+	//Basic:
+	.CLK(CLK),
+	
+	//LU
+	.BITUNIT_LU_OPCode(_CPU_ROM_OutputData[3:0]),
+	
+	//A INPUT:
+	.BITUNIT_A_WE(_EXE_BITUNIT_A_WE),
+	.BITUNIT_A_OPCode(_CPU_ROM_OutputData[2:0]),
+	
+	//B INPUT:
+	.BITUNIT_B_OPCode(_CPU_ROM_OutputData[1:0]),
+	
+	//Word Unit:
+	//OV:
+	.BITUNIT_OVResoult(_WORD_UNIT_OV),
+	
+	//Comparator:
+	.BITUNIT_ComparatorResoult(_WORD_UNIT_ComparatorResoult),
+	
+	//DATA INPUT:
+	//ProgMem:
+	.BITUNIT_ArgToSet(_CPU_ROM_OutputData[0]),
+	//RAM:
+	.BITUNIT_RAMData(_DATAROUTER_CPUData[0]),
+	//Registers:
+	.BITUNIT_Registers(_REGISTERS_OutputData[0]),
+	//Semaphore:
+	.BITUNIT_Semaphore(),
+	
+	// Outputs:	
+	//A:
+	.BITUNIT_A(_BIT_UNIT_A)
+);
+
+//WORD_UNIT Outputs:
+wire [(FetchBits - 1) : 0] _WORD_UNIT_A;
+wire 							 	_WORD_UNIT_OV;
+wire 								_WORD_UNIT_ComparatorResoult;
+
+WORD_UNIT _WORD_UNIT
+(
+	//Basic:
+	.CLK(CLK),
+	
+	//ALU 
+	.WORDUNIT_ALU_OPCode(_CPU_ROM_OutputData[3:0]),
+	//OV:
+	.WORDUNIT_OV_OPCode(_CPU_ROM_OutputData[1:0]),
+
+	//A INPUT:
+	.WORDUNIT_A_WE(_EXE_WORDUNIT_A_WE),
+	.WORDUNIT_A_OPCode(_CPU_ROM_OutputData[1:0]),
+	
+	//B INPUT:
+	.WORDUNIT_B_WE(_EXE_WORDUNIT_B_WE),
+	.WORDUNIT_B_OPCode(_CPU_ROM_OutputData[1:0]),
+
+	//DATA INPUT:
+	//ProgMem:
+	.WORDUNIT_ArgToSet(_CPU_ROM_OutputData),
+	//RAM
+	.WORDUNIT_RAMData(_DATAROUTER_CPUData),
+	//REGISTERS
+	.WORDUNIT_Register(_REGISTERS_OutputData),
+	
+	// Outputs:	
+	//OV:
+	.WORDUNIT_OV(_WORD_UNIT_OV),
+	//Comparator:
+	.WORDUNIT_ComparatorResoult(_WORD_UNIT_ComparatorResoult),
+	//A:
+	.WORDUNIT_A(_WORD_UNIT_A) 
+);
+
+
+endmodule 

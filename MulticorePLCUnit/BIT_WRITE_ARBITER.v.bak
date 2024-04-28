@@ -1,0 +1,46 @@
+module BIT_WRITE_ARBITER
+(
+	//CLK:
+	input wire 			 CLK,
+	
+	//Carry in:
+	input wire 			 WE_PREV,
+	
+	//Driver data:
+	input wire 			 WE,
+	
+	input wire 			 THREAD_DATA,
+	input wire 			 THREAD_ADDR,
+
+	//Output data:
+	output wire			 SELECTOR,
+	
+	output wire [7:0]  RAM_DATA,
+	output wire [7:0]  RAM_ADDR,
+	
+	//Ack:
+	output reg			 ACK,
+
+	//Carry out:
+	output wire 		 CARRY_OUT
+);
+
+
+reg	WE_reg;
+wire  SELECTOR_GATE;
+
+always @(posedge CLK)
+begin
+	WE_reg <= WE;
+	ACK 	 <= SELECTOR_GATE;
+end
+
+assign SELECTOR			= (SELECTOR_GATE) ? 1'b1 : 1'bz; 
+assign SELECTOR_GATE	 	= (WE_PREV &&  WE_reg) ? 1'b1 : 1'b0;
+assign CARRY_OUT 			=  WE_PREV && ~WE_reg;
+
+assign RAM_DATA 			= (SELECTOR_GATE) ? THREAD_DATA :  8'bz; 
+assign RAM_ADDR 			= (SELECTOR_GATE) ? THREAD_ADDR :  8'bz; 
+
+
+endmodule 

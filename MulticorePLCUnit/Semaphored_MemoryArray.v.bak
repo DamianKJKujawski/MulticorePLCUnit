@@ -1,0 +1,50 @@
+module Semaphored_MemoryArray
+(
+input  wire clk,
+
+input  wire [4:0] WR_Addr,
+input  wire [4:0] RD_Addr, 
+
+input  wire WR,
+input  wire WR_EN,
+output reg  WR_RDY,
+
+input  wire RD_Release,
+input  wire RD,
+input  wire RD_EN,
+output reg  RD_RDY
+);
+
+localparam NumberOfCores = 4;
+
+
+
+
+
+
+
+genvar i;
+generate
+	for (i=1; i<=NumberOfCores; i=i+1) 
+	begin 
+		: generate_Cache_identifier
+		Semaphored_BitMemory Semaphored_BitMemory_Instance
+		(
+			.clk(clk),
+
+			.WR(WR),
+			.WR_EN(),
+			.WR_RDY(WR_RDY),
+
+			.RD_Release(),
+			.RD(),
+			.RD_EN(),
+			.RD_RDY(RD_RDY)
+		);
+endgenerate
+
+
+
+
+
+endmodule 

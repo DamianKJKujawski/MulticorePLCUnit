@@ -1,0 +1,26 @@
+module INPUT_REGISTERS
+(
+	input wire 		   CLK,
+	input wire 		   INPUTREGISTERS_LoadInput,
+
+	input wire [3:0] 	INPUTREGISTERS_OutADDR,
+	input wire 			INPUTREGISTERS_OutDATA,
+);
+
+wire RAM_EN = ( !PERIPHERALS_InADDR[15] && PERIPHERALS_WE );
+
+reg IN_REGISTER[3:0];
+	
+	
+always @ (posedge CLK)
+begin
+	RAM_OutDATA <= RAM[RAM_OutADDR];
+	
+	if (INPUTREGISTERS_LoadInput) 
+	begin
+		RAM[RAM_InADDR] <= RAM_InDATA;
+	end 
+end
+
+
+endmodule 

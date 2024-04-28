@@ -1,0 +1,68 @@
+module StatesController
+(
+	input 			clk,
+
+	input 			NextState,
+	
+	
+	output wire 	CPU_Enable,
+	output wire 	SaveInputImageToRam,
+	output wire 	SaveOutputImageToRam
+);
+
+reg [3:0] currentState;
+
+//States:
+localparam State_Idle 				= 4'b0000; 
+localparam State_UpdateInput  	= 4'b0001; 
+localparam State_Active 			= 4'b0010; 
+localparam State_UpdateOutput		= 4'b0100; 
+localparam State_Diagnostic		= 4'b1000; 
+
+
+
+
+
+
+
+always @(posedge clk)
+begin
+	if(NextState)
+	begin
+		case(currentState)
+		begin
+		State_Idle:
+			begin
+				currentState <= State_UpdateInput;
+			end
+		State_UpdateInput:
+			begin
+				currentState <= State_Active;
+			end
+		State_Active:
+			begin
+				currentState <= State_UpdateOutput;
+			end
+		State_UpdateOutput:
+			begin
+				currentState <= State_Diagnostic;
+			end
+		State_Diagnostic:
+			begin
+				currentState <= State_Idle;
+			end
+		end
+	end
+	
+
+
+
+end
+
+
+
+
+
+
+
+endmodule 

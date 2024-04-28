@@ -1,0 +1,27 @@
+module SEMAPHORE_ENABLER
+(
+	//Addr from CPU to AddrDecoder:
+	input  wire [7: 0]													SEMAPHOREENABLER_InputAddr,
+	//Addr from AddrDecoder to Semaphore:
+	output wire [(NumberOfSemaphores*NumberOfCores)-1: 0]		SEMAPHOREENABLER_OutputAddr
+);
+
+localparam NumberOfSemaphores = 8;
+localparam NumberOfCores 		= 2;
+
+localparam numOfSemaphores_AddrMSB 		= (NumberOfSemaphores>1)? ($clog2(NumberOfCores)-1) : 0;
+localparam numOfCores_AddrMSB 		 	= (NumberOfSemaphores>1)? ($clog2(NumberOfCores)-1) : 0;
+
+genvar i;
+generate
+	for (i=0; i<(NumberOfSemaphores*NumberOfCores); i=i+1) 
+	begin 
+		: generate_semBuffer_id
+		//Addr from AddrDecoder to Semaphore:
+		assign SEMAPHOREADDRDECODER_OutputAddr[i] = (_SEMAPHOREADDRDECODER_OutputAddr_buffer[i]) ? 1'b1 : 1'bz;
+	end
+endgenerate
+
+wire [(NumberOfSemaphores*NumberOfCores)-1: 0] _SEMAPHOREADDRDECODER_OutputAddr_buffer = (1'b1 << SEMAPHOREADDRDECODER_InputAddr[(numOfSemaphores_AddrMSB + numOfCores_AddrMSB): 0]) ;
+
+endmodule

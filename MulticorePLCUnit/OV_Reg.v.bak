@@ -1,0 +1,26 @@
+module OV_Reg
+(
+	input 		clk,
+	input 		OV_Ctrl,
+	
+	input			adder,
+	input			subtractor,
+
+	output reg 	OV
+);
+
+
+always @(posedge clk) 
+begin
+	case(OV_Ctrl)
+		2'b00:
+			OV <= adder[8];
+		2'b01:
+			OV <= subtractor[8];
+		default:
+			OV <= 1'b0;
+	endcase
+end
+	 
+
+endmodule 

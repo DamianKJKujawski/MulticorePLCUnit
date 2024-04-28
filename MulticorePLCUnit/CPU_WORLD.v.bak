@@ -1,0 +1,54 @@
+module CPU_WORLD
+(
+	output wire	[15:0] 	OUTPUTS,
+	output wire 				PROGRAMMER_ACK
+);
+
+//TESTEBENCH:
+always begin
+	#5 CLK = !CLK;
+end
+
+initial begin
+	CLK 						 			= 0;
+	INPUTS 					 			= 0;
+	PROGRAMMER_Reset 			= 1;
+	PROGRAMMER_InputData 	= 0;
+	PROGRAMMER_PCK 				= 0;
+	PROGRAMMER_SCK 				= 0;
+	DIAGNOSTIC_WAIT 			= 0;
+	PS = 0;
+end
+
+
+
+//CPU UNIT:
+	reg 			 CLK;
+	reg	[15:0] INPUTS;
+	
+	reg				 PS;
+	
+	reg				 PROGRAMMER_Reset;
+	reg	[7:0]	 PROGRAMMER_InputData;
+	reg				 PROGRAMMER_PCK;
+	reg				 PROGRAMMER_SCK;
+	reg				 DIAGNOSTIC_WAIT;	
+CPU_UNIT _CPU_UNIT
+(
+	.CLK(CLK),
+	.PS(PS),
+	//Programmer input:
+	.INPUTS(INPUTS),
+	.OUTPUTS(OUTPUTS),
+	//Programmer input:
+	.PROGRAMMER_Reset(PROGRAMMER_Reset),
+	.PROGRAMMER_InputData(PROGRAMMER_InputData),
+	.PROGRAMMER_PCK(PROGRAMMER_PCK),
+	.PROGRAMMER_SCK(PROGRAMMER_SCK),
+	//Programmer ack:
+	.PROGRAMMER_ACK(PROGRAMMER_ACK),
+	//Diagnostic signal:
+	.DIAGNOSTIC_WAIT(DIAGNOSTIC_WAIT)
+);
+
+endmodule 

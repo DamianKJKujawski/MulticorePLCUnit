@@ -1,0 +1,30 @@
+module FIFO_POINTER
+( 
+	//Basic:
+	input wire 			CLK, 
+	
+	input wire 			FIFOPOINTERS_RST,
+	
+	//Input:
+	input wire 			FIFOPOINTERS_CntSignal, 
+	
+	//Output:
+	output reg [2:0] 	FIFOPOINTERS_CntPointer
+); 
+
+
+always@(posedge CLK)
+begin
+   if(FIFOPOINTERS_RST)
+		begin
+			FIFOPOINTERS_CntPointer <= 0;
+		end
+   else
+		begin
+			if( !EMPTY && FIFO_RD ) 
+					FIFOPOINTERS_CntSignal <= FIFOPOINTERS_CntSignal + 1'b1;
+		end
+end
+
+
+endmodule 

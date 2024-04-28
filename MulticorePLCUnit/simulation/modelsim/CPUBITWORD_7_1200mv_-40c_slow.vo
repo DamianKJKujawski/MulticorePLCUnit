@@ -1,0 +1,347 @@
+// Copyright (C) 1991-2016 Altera Corporation. All rights reserved.
+// Your use of Altera Corporation's design tools, logic functions 
+// and other software and tools, and its AMPP partner logic 
+// functions, and any output files from any of the foregoing 
+// (including device programming or simulation files), and any 
+// associated documentation or information are expressly subject 
+// to the terms and conditions of the Altera Program License 
+// Subscription Agreement, the Altera Quartus Prime License Agreement,
+// the Altera MegaCore Function License Agreement, or other 
+// applicable license agreement, including, without limitation, 
+// that your use is for the sole purpose of programming logic 
+// devices manufactured by Altera and sold by Altera or its 
+// authorized distributors.  Please refer to the applicable 
+// agreement for further details.
+
+// VENDOR "Altera"
+// PROGRAM "Quartus Prime"
+// VERSION "Version 16.0.0 Build 211 04/27/2016 SJ Lite Edition"
+
+// DATE "10/05/2019 10:59:33"
+
+// 
+// Device: Altera EP4CGX150DF31I7AD Package FBGA896
+// 
+
+// 
+// This Verilog file should be used for ModelSim-Altera (Verilog) only
+// 
+
+`timescale 1 ps/ 1 ps
+
+module CPU_WORLD (
+	OUTPUTS,
+	PROGRAMMER_ACK);
+output 	[15:0] OUTPUTS;
+output 	PROGRAMMER_ACK;
+
+// Design Ports Information
+// OUTPUTS[0]	=>  Location: PIN_N30,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// OUTPUTS[1]	=>  Location: PIN_AH17,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// OUTPUTS[2]	=>  Location: PIN_B18,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// OUTPUTS[3]	=>  Location: PIN_AK17,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// OUTPUTS[4]	=>  Location: PIN_G13,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// OUTPUTS[5]	=>  Location: PIN_P30,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// OUTPUTS[6]	=>  Location: PIN_AA22,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// OUTPUTS[7]	=>  Location: PIN_AG5,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// OUTPUTS[8]	=>  Location: PIN_T25,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// OUTPUTS[9]	=>  Location: PIN_AH5,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// OUTPUTS[10]	=>  Location: PIN_AC16,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// OUTPUTS[11]	=>  Location: PIN_AG8,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// OUTPUTS[12]	=>  Location: PIN_A7,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// OUTPUTS[13]	=>  Location: PIN_AB17,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// OUTPUTS[14]	=>  Location: PIN_C26,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// OUTPUTS[15]	=>  Location: PIN_A14,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// PROGRAMMER_ACK	=>  Location: PIN_AG17,	 I/O Standard: 2.5 V,	 Current Strength: Default
+
+
+wire gnd;
+wire vcc;
+wire unknown;
+
+assign gnd = 1'b0;
+assign vcc = 1'b1;
+assign unknown = 1'bx;
+
+tri1 devclrn;
+tri1 devpor;
+tri1 devoe;
+// synopsys translate_off
+initial $sdf_annotate("CPUBITWORD_7_1200mv_-40c_v_slow.sdo");
+// synopsys translate_on
+
+wire \OUTPUTS[0]~output_o ;
+wire \OUTPUTS[1]~output_o ;
+wire \OUTPUTS[2]~output_o ;
+wire \OUTPUTS[3]~output_o ;
+wire \OUTPUTS[4]~output_o ;
+wire \OUTPUTS[5]~output_o ;
+wire \OUTPUTS[6]~output_o ;
+wire \OUTPUTS[7]~output_o ;
+wire \OUTPUTS[8]~output_o ;
+wire \OUTPUTS[9]~output_o ;
+wire \OUTPUTS[10]~output_o ;
+wire \OUTPUTS[11]~output_o ;
+wire \OUTPUTS[12]~output_o ;
+wire \OUTPUTS[13]~output_o ;
+wire \OUTPUTS[14]~output_o ;
+wire \OUTPUTS[15]~output_o ;
+wire \PROGRAMMER_ACK~output_o ;
+
+
+// Location: IOOBUF_X117_Y53_N2
+cycloneiv_io_obuf \OUTPUTS[0]~output (
+	.i(gnd),
+	.oe(vcc),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(\OUTPUTS[0]~output_o ),
+	.obar());
+// synopsys translate_off
+defparam \OUTPUTS[0]~output .bus_hold = "false";
+defparam \OUTPUTS[0]~output .open_drain_output = "false";
+// synopsys translate_on
+
+// Location: IOOBUF_X70_Y0_N23
+cycloneiv_io_obuf \OUTPUTS[1]~output (
+	.i(gnd),
+	.oe(vcc),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(\OUTPUTS[1]~output_o ),
+	.obar());
+// synopsys translate_off
+defparam \OUTPUTS[1]~output .bus_hold = "false";
+defparam \OUTPUTS[1]~output .open_drain_output = "false";
+// synopsys translate_on
+
+// Location: IOOBUF_X70_Y91_N9
+cycloneiv_io_obuf \OUTPUTS[2]~output (
+	.i(gnd),
+	.oe(vcc),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(\OUTPUTS[2]~output_o ),
+	.obar());
+// synopsys translate_off
+defparam \OUTPUTS[2]~output .bus_hold = "false";
+defparam \OUTPUTS[2]~output .open_drain_output = "false";
+// synopsys translate_on
+
+// Location: IOOBUF_X66_Y0_N2
+cycloneiv_io_obuf \OUTPUTS[3]~output (
+	.i(gnd),
+	.oe(vcc),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(\OUTPUTS[3]~output_o ),
+	.obar());
+// synopsys translate_off
+defparam \OUTPUTS[3]~output .bus_hold = "false";
+defparam \OUTPUTS[3]~output .open_drain_output = "false";
+// synopsys translate_on
+
+// Location: IOOBUF_X50_Y91_N2
+cycloneiv_io_obuf \OUTPUTS[4]~output (
+	.i(gnd),
+	.oe(vcc),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(\OUTPUTS[4]~output_o ),
+	.obar());
+// synopsys translate_off
+defparam \OUTPUTS[4]~output .bus_hold = "false";
+defparam \OUTPUTS[4]~output .open_drain_output = "false";
+// synopsys translate_on
+
+// Location: IOOBUF_X117_Y51_N9
+cycloneiv_io_obuf \OUTPUTS[5]~output (
+	.i(gnd),
+	.oe(vcc),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(\OUTPUTS[5]~output_o ),
+	.obar());
+// synopsys translate_off
+defparam \OUTPUTS[5]~output .bus_hold = "false";
+defparam \OUTPUTS[5]~output .open_drain_output = "false";
+// synopsys translate_on
+
+// Location: IOOBUF_X117_Y22_N2
+cycloneiv_io_obuf \OUTPUTS[6]~output (
+	.i(gnd),
+	.oe(vcc),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(\OUTPUTS[6]~output_o ),
+	.obar());
+// synopsys translate_off
+defparam \OUTPUTS[6]~output .bus_hold = "false";
+defparam \OUTPUTS[6]~output .open_drain_output = "false";
+// synopsys translate_on
+
+// Location: IOOBUF_X19_Y0_N9
+cycloneiv_io_obuf \OUTPUTS[7]~output (
+	.i(gnd),
+	.oe(vcc),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(\OUTPUTS[7]~output_o ),
+	.obar());
+// synopsys translate_off
+defparam \OUTPUTS[7]~output .bus_hold = "false";
+defparam \OUTPUTS[7]~output .open_drain_output = "false";
+// synopsys translate_on
+
+// Location: IOOBUF_X117_Y34_N2
+cycloneiv_io_obuf \OUTPUTS[8]~output (
+	.i(gnd),
+	.oe(vcc),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(\OUTPUTS[8]~output_o ),
+	.obar());
+// synopsys translate_off
+defparam \OUTPUTS[8]~output .bus_hold = "false";
+defparam \OUTPUTS[8]~output .open_drain_output = "false";
+// synopsys translate_on
+
+// Location: IOOBUF_X19_Y0_N2
+cycloneiv_io_obuf \OUTPUTS[9]~output (
+	.i(gnd),
+	.oe(vcc),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(\OUTPUTS[9]~output_o ),
+	.obar());
+// synopsys translate_off
+defparam \OUTPUTS[9]~output .bus_hold = "false";
+defparam \OUTPUTS[9]~output .open_drain_output = "false";
+// synopsys translate_on
+
+// Location: IOOBUF_X48_Y0_N9
+cycloneiv_io_obuf \OUTPUTS[10]~output (
+	.i(gnd),
+	.oe(vcc),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(\OUTPUTS[10]~output_o ),
+	.obar());
+// synopsys translate_off
+defparam \OUTPUTS[10]~output .bus_hold = "false";
+defparam \OUTPUTS[10]~output .open_drain_output = "false";
+// synopsys translate_on
+
+// Location: IOOBUF_X37_Y0_N23
+cycloneiv_io_obuf \OUTPUTS[11]~output (
+	.i(gnd),
+	.oe(vcc),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(\OUTPUTS[11]~output_o ),
+	.obar());
+// synopsys translate_off
+defparam \OUTPUTS[11]~output .bus_hold = "false";
+defparam \OUTPUTS[11]~output .open_drain_output = "false";
+// synopsys translate_on
+
+// Location: IOOBUF_X32_Y91_N2
+cycloneiv_io_obuf \OUTPUTS[12]~output (
+	.i(gnd),
+	.oe(vcc),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(\OUTPUTS[12]~output_o ),
+	.obar());
+// synopsys translate_off
+defparam \OUTPUTS[12]~output .bus_hold = "false";
+defparam \OUTPUTS[12]~output .open_drain_output = "false";
+// synopsys translate_on
+
+// Location: IOOBUF_X66_Y0_N23
+cycloneiv_io_obuf \OUTPUTS[13]~output (
+	.i(gnd),
+	.oe(vcc),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(\OUTPUTS[13]~output_o ),
+	.obar());
+// synopsys translate_off
+defparam \OUTPUTS[13]~output .bus_hold = "false";
+defparam \OUTPUTS[13]~output .open_drain_output = "false";
+// synopsys translate_on
+
+// Location: IOOBUF_X99_Y91_N16
+cycloneiv_io_obuf \OUTPUTS[14]~output (
+	.i(gnd),
+	.oe(vcc),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(\OUTPUTS[14]~output_o ),
+	.obar());
+// synopsys translate_off
+defparam \OUTPUTS[14]~output .bus_hold = "false";
+defparam \OUTPUTS[14]~output .open_drain_output = "false";
+// synopsys translate_on
+
+// Location: IOOBUF_X50_Y91_N23
+cycloneiv_io_obuf \OUTPUTS[15]~output (
+	.i(gnd),
+	.oe(vcc),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(\OUTPUTS[15]~output_o ),
+	.obar());
+// synopsys translate_off
+defparam \OUTPUTS[15]~output .bus_hold = "false";
+defparam \OUTPUTS[15]~output .open_drain_output = "false";
+// synopsys translate_on
+
+// Location: IOOBUF_X68_Y0_N2
+cycloneiv_io_obuf \PROGRAMMER_ACK~output (
+	.i(gnd),
+	.oe(vcc),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(\PROGRAMMER_ACK~output_o ),
+	.obar());
+// synopsys translate_off
+defparam \PROGRAMMER_ACK~output .bus_hold = "false";
+defparam \PROGRAMMER_ACK~output .open_drain_output = "false";
+// synopsys translate_on
+
+assign OUTPUTS[0] = \OUTPUTS[0]~output_o ;
+
+assign OUTPUTS[1] = \OUTPUTS[1]~output_o ;
+
+assign OUTPUTS[2] = \OUTPUTS[2]~output_o ;
+
+assign OUTPUTS[3] = \OUTPUTS[3]~output_o ;
+
+assign OUTPUTS[4] = \OUTPUTS[4]~output_o ;
+
+assign OUTPUTS[5] = \OUTPUTS[5]~output_o ;
+
+assign OUTPUTS[6] = \OUTPUTS[6]~output_o ;
+
+assign OUTPUTS[7] = \OUTPUTS[7]~output_o ;
+
+assign OUTPUTS[8] = \OUTPUTS[8]~output_o ;
+
+assign OUTPUTS[9] = \OUTPUTS[9]~output_o ;
+
+assign OUTPUTS[10] = \OUTPUTS[10]~output_o ;
+
+assign OUTPUTS[11] = \OUTPUTS[11]~output_o ;
+
+assign OUTPUTS[12] = \OUTPUTS[12]~output_o ;
+
+assign OUTPUTS[13] = \OUTPUTS[13]~output_o ;
+
+assign OUTPUTS[14] = \OUTPUTS[14]~output_o ;
+
+assign OUTPUTS[15] = \OUTPUTS[15]~output_o ;
+
+assign PROGRAMMER_ACK = \PROGRAMMER_ACK~output_o ;
+
+endmodule

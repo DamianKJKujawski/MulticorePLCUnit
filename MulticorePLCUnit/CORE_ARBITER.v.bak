@@ -1,0 +1,35 @@
+module CORE_ARBITER
+(
+	input wire			 CLK,
+	
+	//Programmer:
+	input	wire			 PROGRAMMER_RESET,
+	input	wire	[7:0]	 PROGRAMMER_InputData,
+	input	wire			 PROGRAMMER_PCK,
+	input	wire			 PROGRAMMER_SCK,
+	
+	output wire			 CORES_CPU_END_Detected,
+
+	//Word Peripherals:
+	output wire 		 CORES_WORDPERIPHERALS_EN,
+	output wire 	    CORES_WORDPERIPHERALS_WE,
+	output wire [15:0] CORES_WORDPERIPHERALS_InADDR,
+	output wire [ 7:0] CORES_WORDPERIPHERALS_InDATA,
+	output wire [15:0] CORES_WORDPERIPHERALS_OutADDR,
+	input  wire [ 7:0] CORES_WORDPERIPHERALS_OutDATA,
+	
+	//Bit Peripherals:
+	output wire 		 CORES_BITPERIPHERALS_EN,
+	output wire 		 CORES_BITPERIPHERALS_WE,
+	output wire  [3:0] CORES_BITPERIPHERALS_InADDR,
+	output wire 		 CORES_BITPERIPHERALS_InDATA,
+	output wire  [3:0] CORES_BITPERIPHERALS_OutADDR,
+	input  wire 		 CORES_BITPERIPHERALS_OutDATA
+);
+
+
+
+
+
+
+endmodule 

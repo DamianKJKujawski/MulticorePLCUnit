@@ -1,0 +1,24 @@
+module DATA_ROUTER
+(
+	//BASIC:
+	input 			  						CLK,
+	
+	//Input:
+	input 	  [(FetchBits   - 1):0] DATAROUTER_ProgrammerData,
+	input 	  [(CounterBits - 1):0] DATAROUTER_ProgrammerAddr,
+	
+	//OUTPUT:
+	//Addr:
+	input 	  [(CounterBits - 1):0] PCRam_InstructionAddr,
+	//Data:
+	output 	  [(FetchBits - 1):0] 	PCRAM_OutputData
+);
+
+
+//	PARAMETERS
+localparam CounterBits = 4;
+localparam FetchBits   = 8;
+
+
+	
+endmodule

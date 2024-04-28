@@ -1,0 +1,18 @@
+module TIMER
+(
+	input wire			  								CLK,
+
+	input  wire												TIMER_EN;
+	
+	input  wire 											TIMER_SET_REG,
+	input  wire 											TIMER_SET_PRESC,
+	input  wire 											TIMER_SET_VALUE,
+	
+	input  wire	[7:0] 								TIMER_DATA,
+	
+	output wire												TIMER_OV
+);
+
+
+
+endmodule 

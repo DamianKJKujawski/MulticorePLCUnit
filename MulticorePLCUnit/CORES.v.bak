@@ -1,0 +1,186 @@
+module CORES
+(
+	input 					clk,
+
+	input				[7:0] Inputs,
+	output wire		[7:0] Outputs
+);
+
+
+//				PARAMETERS
+localparam NumberOfCores = 2;
+localparam AddrMSB 		 = (NumberOfCores>1)? ($clog2(NumberOfCores)-1) + 1 : 1;
+
+
+//ReadReadyStatus
+//From Cache to RAM(N -> bin)
+wire 												GloablRAM_Bit_ReadReadyStatus;
+wire 												GloablRAM_Word_ReadReadyStatus;
+//From Cache to RAM(N -> bin)
+wire												GloablRAM_Bit_ReadRequest;
+wire												GloablRAM_Word_ReadRequest;
+
+
+
+
+//WriteRequest
+//From RAM to Cache(bin->n)
+wire 												GloablRAM_Bit_WriteRequest;
+wire 												GloablRAM_Word_WriteRequest;
+//From RAM to Cache(bin->n)
+wire 												GloablRAM_Bit_WriteReadyStatus;	
+wire 												GloablRAM_Word_WriteReadyStatus;
+
+
+
+
+
+
+wire 		[3:0]									Programmer_ExternalAddr;
+wire 		[7:0]									Programmer_ExternalData;
+wire 												Programmer_WriteRAMSignal;
+wire		[AddrMSB:0]							Programmer_CPUAddr;
+wire 												Programmer_ProgrammingMode;
+reg		[NumberOfCores-1:  0]			Programmer_WriteSignalMuxed;
+
+
+
+
+//				DESCRIPTION
+always @(posedge clk)
+begin
+	if(Programmer_WriteRAMSignal)
+		Programmer_WriteSignalMuxed[Programmer_CPUAddr] = 1'b1;
+	else
+		Programmer_WriteSignalMuxed = 0;
+end
+
+
+
+
+Programmer 
+#
+(
+.NumberOfCores(NumberOfCores)
+)
+Programmer_Instance
+(
+	.clk(clk),
+	
+	.Programmer_ExternalAddr(),
+	.Programmer_ExternalData(),
+	.Programmer_WriteRAMSignal(),
+	.Programmer_ProgrammingMode(),
+);
+
+
+StatesController StatesController_Instance
+(
+	.clk(clk),
+
+	.NextState(),
+		
+	.CPU_Enable(),
+	.SaveInputImageToRam(),
+	.SaveOutputImageToRam()
+);
+
+
+
+//CPU CORES:
+
+localparam NumberOfSemaphores = 8;
+
+wire [NumberOfSemaphores-1:0] 				_SEMAPHORE_ADDR [AddrMSB:0];
+wire [NumberOfCores*NumberOfSemaphores:0] _SEMAPHORE_EN;
+wire [NumberOfCores*NumberOfSemaphores:0] _SEMAPHORE_OutputData;
+wire [NumberOfSemaphores-1:0]					_SEMAPHORE_CPUData;
+
+genvar i; 
+generate
+	for (i=0; i<NumberOfCores; i=i+1) 
+	begin 
+		: generate_CORE_identifier
+
+		CPU _CPU_Instance 
+		(
+			.CLK(clk),
+		
+			.CPU_WE(),
+			.CPU_Reset(),
+		
+			//Programmer:
+			.PROGRAMMER_Addr(),
+			.PROGRAMMER_Data(),
+	
+			//RAM:
+			.RAM_ACK(),
+
+			.RAM_Data(),
+			.RAM_DataADDR(),
+	
+			.RAM_WR(),
+			.RAM_RR(),
+	
+			//Semaphore:
+			.SEMAPHORE_DataAvailability(),
+			.SEMAPHORE_InputData(),
+	
+			.SEMAPHORE_ADDR(_SEMAPHORE_ADDR[i]),
+	
+			.SEMAPHORE_OutputData(_SEMAPHORE_CPUData[i]),
+	
+			.SEMAPHORE_SET(),
+			.SEMAPHORE_READ()
+		);
+		
+		
+		SEMAPHORE_ROUTER _SEMAPHORE_ROUTER
+		(
+			//Data from CPU to AddrDecoder:
+			.SEMAPHOREADDRDECODER_Data_CPU(),
+			//Data between AddrDecoder and Semaphores:
+			.SEMAPHOREADDRDECODER_Data_FromSemaphore(),
+			.SEMAPHOREADDRDECODER_Data_ToSemaphore(),
+
+			//Addr between CPU and Semaphore:
+			.SEMAPHOREADDRDECODER_Addr_FromCPU(),
+			.SEMAPHOREADDRDECODER_WE_ToSemaphore(),
+			
+			//Semaphore data availability:
+			.SEMAPHOREADDRDECODER_Available_FromSemaphore(),
+			//SET Signal: 
+			.SEMAPHOREADDRDECODER_SET_FromCPU(),
+			.SEMAPHOREADDRDECODER_SET_ToSemaphore(),
+			//READ Signal:
+			.SEMAPHOREADDRDECODER_READ_FromCPU(),
+			.SEMAPHOREADDRDECODER_READ_ToSemaphore()
+		);
+
+		
+		SEMAPHORE_ARRAY _SEMAPHORE_ARRAY
+		(
+			//Basic:
+			.CLK(clk),
+			.SEMAPHOREARRAY_RESET(),
+			
+			//Inputs:
+			.SEMAPHOREARRAY_WE(_SEMAPHORE_EN[(NumberOfSemaphores+(NumberOfSemaphores*i)):(NumberOfSemaphores*i)]),
+			.SEMAPHOREARRAY_InputDATA(),
+			
+			//Control signals:
+			.SEMAPHOREARRAY_SET(),
+			.SEMAPHOREARRAY_READ(),
+			//Output signals:
+			.SEMAPHOREARRAY_DataAvailability(),
+			
+			//Output:
+			.SEMAPHOREARRAY_OutputData(_SEMAPHORE_OutputData[((i*NumberOfSemaphores)+NumberOfSemaphores):(i*NumberOfSemaphores)])
+		);
+	end
+endgenerate
+
+
+
+
+endmodule 

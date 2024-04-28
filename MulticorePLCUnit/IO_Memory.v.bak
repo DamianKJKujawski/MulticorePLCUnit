@@ -1,0 +1,56 @@
+module IO_Memory
+(
+	input wire 									clk,
+	input wire 									enable,
+	
+	input wire									WriteEnable,
+	input wire 	[AddrBits-1:0] 	Addr,
+	
+	input wire 	[DataBits-1:0] 	InputData,
+
+	input wire									LoadInputs,
+	input wire									LoadOutputs,
+	
+	input wire 	[IOBits-1:0] 		Inputs,
+	output wire [IOBits-1:0] 		Outputs
+);
+
+
+localparam IOBits   	= 16;
+localparam DataBits   = 8;
+localparam AddrBits 	= 4;
+
+//IO
+reg 	[IOBits-1:0] 		InputsReg,
+reg 	[IOBits-1:0] 		OutputsReg,
+
+
+
+
+
+//				WIRES & REGS
+reg  [DataBits   - 1 :0] RAM[((2^AddrBits) - 1):0];
+		
+//				DESCRIPTION
+always @ (posedge clk)
+begin
+	if (WriteEnable && enable)
+	begin
+		RAM[Addr] <= InputData;
+	end
+end
+	
+assign OutputData = (enable)? RAM[Addr]:8'bzzzz_zzzz;
+
+//				TESTBENCH
+initial
+begin
+	integer i;
+	
+	for (i=0; i<(2^AddrBits); i=i+1)
+	begin
+		RAM[i] = {(DataBits-1) {1'b0}};
+	end
+end
+
+endmodule 

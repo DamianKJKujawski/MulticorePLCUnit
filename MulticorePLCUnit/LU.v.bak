@@ -1,0 +1,25 @@
+module LU
+(
+	input wire  [1:0] LU_Select,
+	input wire  		A,
+	input wire  		B,
+	output reg 	 		Resoult
+
+);
+
+
+ always @(*)
+ begin
+	case(LU_Select)
+          4'b00: //  And 
+				resoult <= A & B;
+          4'b01: //  Or
+				resoult <= A | B;
+          4'b10: //  Not
+				resoult <= ~A;
+			 4'b11: //  Xor
+				resoult <= A ^ B;
+	endcase
+end
+	 
+endmodule 

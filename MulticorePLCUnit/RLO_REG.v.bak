@@ -1,0 +1,32 @@
+module ARG_REG
+(
+	// Basic:
+	input wire 			CLK,
+
+	//Control:
+	input wire 			ARG_EN,
+	input wire 	[2:0]	RLO_OPCode,
+	
+	//Input data:
+	input wire 			ARG_ArgToSet,
+	input wire 			ARG_RAMData,
+	
+	//Output data:
+	output reg			ARG_REG
+);
+
+
+always @(posedge CLK)
+begin	
+	if(ARG_EN)
+	begin
+		if(RLO_OPCode)
+			ARG_REG <= ARG_ArgToSet;
+		else
+			ARG_REG <= ARG_RAMData;	
+	end
+end
+
+
+
+endmodule

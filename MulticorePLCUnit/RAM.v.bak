@@ -1,0 +1,25 @@
+module RAM
+(
+	input wire CLK,
+	input wire WE,
+
+	input wire [7:0] IN_ADDR,
+	input wire [7:0] IN_DATA,
+
+	input wire [7:0] OUT_ADDR,
+	output reg [7:0] OUT_DATA
+);
+	// Declare the RAM variable
+	reg [7:0] RAM[256:0];
+	
+	// Port A
+	always @ (posedge CLK)
+	begin
+		OUT_DATA <= RAM[OUT_ADDR];
+	
+		if (WE) 
+		begin
+			RAM[IN_ADDR] <= IN_DATA;
+		end 
+	end
+endmodule

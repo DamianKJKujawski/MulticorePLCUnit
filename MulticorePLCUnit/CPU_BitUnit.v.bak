@@ -1,0 +1,81 @@
+module CPU_BitUnit
+(
+	// Inputs:
+	input  wire 			clk,
+	
+	input  wire 	[1:0] LU_Select,
+	
+	input wire 				A_Bit_Enable,
+	input  wire 	[2:0] A_Bit_Select,
+	
+	input wire 				B_Bit_Enable,
+	input  wire 	 		B_Bit_Select,
+	
+	
+	input  wire				OV,
+	input  wire 			comparatorResoult,
+	
+	
+	input  wire 		  	ArgToSet,
+	input  wire 		  	Memory_DataBit,
+
+	
+	// Outputs:	
+	output reg 				A
+);
+
+
+// REGs:
+reg 	B;
+wire 	LU_Resoult;
+
+
+always @(posedge clk)
+begin
+	if(A_Bit_Enable)
+	begin
+		case(A_Bit_Select)
+			3'b000:
+				A <= ArgToSet;
+			3'b001:
+				A <= Memory_DataBit;
+			3'b010:
+				A <= LU_Resoult;
+			3'b011:
+				A <= OV;
+			3'b100:
+				A <= comparatorResoult;
+		endcase
+	end
+end
+
+
+always @(posedge clk)
+begin	
+	if(B_Bit_Enable)
+	begin
+		if(B_Bit_Select)
+			B <= ArgToSet;
+		else
+			B <= Memory_DataBit;	
+	end
+end
+
+
+LU LU_BitUnit
+(
+	LU_Select,
+	A,
+	B,
+	LU_Resoult
+);
+
+
+initial
+begin
+	A <= 8'd0;
+	B <= 8'd0;
+end
+
+
+endmodule 

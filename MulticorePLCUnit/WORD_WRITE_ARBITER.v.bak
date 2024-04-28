@@ -1,0 +1,46 @@
+module WORD_WRITE_ARBITER
+(
+	//CLK:
+	input wire 			 CLK,
+	
+	//Carry in:
+	input wire 			 WORDWRITEARBITER_WE_PREV,
+	
+	//Driver data:
+	input wire 			 WORDWRITEARBITER_WE,
+	
+	input wire  [7:0]  WORDWRITEARBITER_THREAD_DATA,
+	input wire  [7:0]  WORDWRITEARBITER_THREAD_ADDR,
+
+	//Output data:
+	output wire			 WORDWRITEARBITER_SELECTOR,
+	
+	output wire [7:0]  WORDWRITEARBITER_RAM_DATA,
+	output wire [7:0]  WORDWRITEARBITER_RAM_ADDR,
+	
+	//Ack:
+	output reg			 WORDWRITEARBITER_ACK,
+
+	//Carry out:
+	output wire 		 WORDWRITEARBITER_CARRY_OUT
+);
+
+
+reg	WE_reg;
+wire  SELECTOR_GATE;
+
+always @(posedge CLK)
+begin
+	WE_reg <= BITWRITEARBITER_WE;
+	BITWRITEARBITER_ACK <= SELECTOR_GATE;
+end
+
+assign BITWRITEARBITER_SELECTOR		= (SELECTOR_GATE) ? 1'b1 : 1'bz; 
+assign SELECTOR_GATE	 					= (BITWRITEARBITER_WE_PREV &&  WE_reg) ? 1'b1 : 1'b0;
+assign BITWRITEARBITER_CARRY_OUT 	=  BITWRITEARBITER_WE_PREV && ~WE_reg;
+
+assign BITWRITEARBITER_RAM_DATA 		= (SELECTOR_GATE) ? BITWRITEARBITER_THREAD_DATA :  1'bz; 
+assign BITWRITEARBITER_RAM_ADDR 		= (SELECTOR_GATE) ? BITWRITEARBITER_THREAD_ADDR :  8'bz; 
+
+
+endmodule 

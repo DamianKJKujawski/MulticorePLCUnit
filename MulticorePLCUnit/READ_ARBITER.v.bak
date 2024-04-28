@@ -1,0 +1,44 @@
+module READ_ARBITER
+(
+	//CLK:
+	input wire 			  CLK,
+	
+	//Carry in:
+	input wire 			  READARBITER_RR_PREV,
+		
+	//Driver data:
+	input wire 			  READARBITER_READ_REQUEST,
+	output wire  [7:0]  READARBITER_THREAD_DATA,
+	input wire   [7:0]  READARBITER_THREAD_ADDR,
+
+	//Output data:
+	input wire   [7:0]  READARBITER_RAM_DATA,
+	output wire  [7:0]  READARBITER_RAM_ADDR,
+	
+	//Ack:
+	output reg			  READARBITER_ACK,
+
+	//Carry out:
+	output wire 		  READARBITER_CARRY_OUT
+);
+
+reg	RR_reg;
+wire 	SELECTOR;
+
+always @(posedge CLK)
+begin
+	RR_reg 				<= READARBITER_READ_REQUEST;
+	READARBITER_ACK 	<= SELECTOR;
+end
+
+
+
+
+assign SELECTOR 						= (READARBITER_RR_PREV &&  RR_reg) ? 1'b1 : 1'b0;
+assign READARBITER_CARRY_OUT 		=  READARBITER_RR_PREV && ~RR_reg;
+
+assign READARBITER_THREAD_DATA 	= (SELECTOR) ? READARBITER_RAM_DATA 	 :  8'bz; 
+assign READARBITER_RAM_ADDR 		= (SELECTOR) ? READARBITER_THREAD_ADDR :  8'bz; 
+
+
+endmodule 

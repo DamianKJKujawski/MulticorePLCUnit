@@ -1,0 +1,20 @@
+module Incrementer
+(
+	input  [3:0] InputValue,
+	output [3:0] IncrementedValue
+
+);
+
+	wire middle_and;
+		
+	assign middle_and = in[0] & in[1];
+
+	assign out [0] = ~ in[0];
+	assign out [1] = 	 in[0] ^ in[1];
+	assign out [2] = 	 middle_and ^ in[2];
+	assign out [3] =   (middle_and & in[2]) ^ in[3]; 
+	
+	
+	
+
+endmodule 

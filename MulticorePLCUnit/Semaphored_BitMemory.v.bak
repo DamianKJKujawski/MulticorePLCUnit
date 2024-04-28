@@ -1,0 +1,34 @@
+module Semaphored_BitMemory
+(
+input  wire clk,
+
+input  wire [4:0] WR_Addr,
+input  wire [4:0] RD_Addr, 
+
+input  wire WR,
+input  wire WR_EN,
+output wire WR_RDY,
+
+input  wire RD_Release,
+input  wire RD,
+input  wire RD_EN,
+output wire RD_RDY
+);
+
+
+reg [1:0] SemaphoreState;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+endmodule 

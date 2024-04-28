@@ -1,0 +1,7 @@
+Warning (20028): Parallel compilation is not licensed and has been disabled
+Info (10281): Verilog HDL Declaration information at CPU.v(72): object "_PC_Counter" differs only in case from object "_PC_COUNTER" in the same scope File: E:/Pulpit/FinalCPU/CPU.v Line: 72
+Warning (10268): Verilog HDL information at StatesController.v(32): always construct contains both blocking and non-blocking assignments File: E:/Pulpit/FinalCPU/StatesController.v Line: 32
+Warning (10268): Verilog HDL information at SEMAPHORE_ROUTER.v(72): always construct contains both blocking and non-blocking assignments File: E:/Pulpit/FinalCPU/SEMAPHORE_ROUTER.v Line: 72
+Warning (10268): Verilog HDL information at COMPARATOR_REG.v(16): always construct contains both blocking and non-blocking assignments File: E:/Pulpit/FinalCPU/COMPARATOR_REG.v Line: 16
+Warning (10268): Verilog HDL information at TIMER_PRESCALER.v(14): always construct contains both blocking and non-blocking assignments File: E:/Pulpit/FinalCPU/TIMER_PRESCALER.v Line: 14
+Warning (12125): Using design file cpu_world.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project

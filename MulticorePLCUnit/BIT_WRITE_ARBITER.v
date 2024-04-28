@@ -1,0 +1,52 @@
+module BIT_WRITE_ARBITER
+(
+	//CLK:
+	input wire 			 CLK,
+	
+	input wire 			 BITWRITEARBITER_EN,
+	
+	input wire			 BITREADARBITER_BIT_SELECT,
+	//Carry in:
+	input wire 			 BITWRITEARBITER_WE_PREV,
+	
+	//Driver data:
+	input wire 			 BITWRITEARBITER_WE,
+	
+	input wire 			 BITWRITEARBITER_THREAD_DATA,
+	input wire  [15:0] BITWRITEARBITER_THREAD_ADDR,
+
+	//Output data:
+	output wire			 BITWRITEARBITER_SELECTOR,
+	
+	output wire 		 BITWRITEARBITER_RAM_DATA,
+	output wire [15:0] BITWRITEARBITER_RAM_ADDR,
+	
+	//Ack:
+	output reg			 BITWRITEARBITER_ACK,
+
+	//Carry out:
+	output wire 		 BITWRITEARBITER_CARRY_OUT
+);
+
+
+reg	WE_reg;
+wire  SELECTOR_GATE;
+
+always @(posedge CLK)
+begin
+	if(BITREADARBITER_BIT_SELECT)
+	begin
+		WE_reg <= BITWRITEARBITER_WE && BITWRITEARBITER_EN;
+		BITWRITEARBITER_ACK <= SELECTOR_GATE;
+	end
+end
+
+assign BITWRITEARBITER_SELECTOR		= (SELECTOR_GATE) ? 1'b1 : 1'bz; 
+assign SELECTOR_GATE	 					= (BITWRITEARBITER_WE_PREV &&  WE_reg) ? 1'b1 : 1'b0;
+assign BITWRITEARBITER_CARRY_OUT 	=  BITWRITEARBITER_WE_PREV && ~WE_reg;
+
+assign BITWRITEARBITER_RAM_DATA 		= (SELECTOR_GATE) ? BITWRITEARBITER_THREAD_DATA :  1'bz; 
+assign BITWRITEARBITER_RAM_ADDR 		= (SELECTOR_GATE) ? BITWRITEARBITER_THREAD_ADDR :  8'bzzzz_zzzz; 
+
+
+endmodule 

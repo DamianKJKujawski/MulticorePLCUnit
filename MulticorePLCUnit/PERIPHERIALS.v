@@ -1,0 +1,23 @@
+module WORD_PERIPHERALS
+(
+	input wire 		     CLK,
+	
+	input wire 			   WORDPERIPHERALS_EN,
+	input wire 		     WORDPERIPHERALS_WE,
+
+	input wire  [15:0] WORDPERIPHERALS_ADDR,
+	input wire  [ 7:0] WORDPERIPHERALS_DATA
+);
+
+
+RAM _RAM
+(
+	.CLK(CLK),
+	.RAM_EN(WORDPERIPHERALS_EN),
+	.RAM_WE(WORDPERIPHERALS_WE),
+
+	.RAM_ADDR(WORDPERIPHERALS_ADDR),
+	.RAM_DATA(WORDPERIPHERALS_DATA)
+);
+
+endmodule 

@@ -1,0 +1,27 @@
+module BIT_ROUTER
+(
+	//BASIC:
+	input wire			  		CLK,
+	
+	input wire					BITROUTER_WriteData,
+	
+	//Input:
+	input wire 				 	BITROUTER_ARG,
+	input wire 					BITROUTER_ACU,
+	
+	//OUTPUT:
+	//Addr:
+	input wire					BITROUTER_Addr,
+	//Data:
+	output wire					BITROUTER_CPUData,
+	//IO:
+	inout wire					BITROUTER_RAMData
+);
+
+
+wire 		DATAROUTER_RAMData_buffer = (DATAROUTER_Addr) ? DATAROUTER_ACU : DATAROUTER_ARG;
+
+assign 	DATAROUTER_RAMData = ( DATAROUTER_WriteData) ? DATAROUTER_RAMData_buffer 	: 8'bzzzzzzzz;
+assign 	DATAROUTER_CPUData = (!DATAROUTER_WriteData) ? DATAROUTER_RAMData 			: 8'bzzzzzzzz; 
+	
+endmodule

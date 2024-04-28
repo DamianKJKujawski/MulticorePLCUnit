@@ -1,0 +1,23 @@
+module SEMAPHORE_ARRAY
+(
+	//BASIC:
+	input 			  						CLK,
+	
+	input 			  						SEMAPHOREUNIT_WE,
+	input 			  						SEMAPHOREUNIT_DATA,
+	
+	input 	  								SEMAPHOREUNIT_SET,
+	input 	  								SEMAPHOREUNIT_READ,
+	
+	input 	  								SEMAPHOREUNIT_RESET,
+	
+	output 	  								SEMAPHOREUNIT_DataAvailability,
+	output 	  								SEMAPHOREUNIT_OutputData
+);
+
+	SEMAPHORE_UNIT _SEMAPHORE_UNIT
+	{};
+
+	
+	
+endmodule

@@ -1,0 +1,956 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dE:/Pulpit/FinalCPU/simulation/modelsim
+vACCU
+Z1 !s110 1569172123
+!i10b 1
+!s100 TRlnS68_M]LN5TP`hNKQa0
+INK]SEH6Qj5_6Q<d:XSiT_3
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+R0
+w1568070929
+8E:/Pulpit/FinalCPU/ACCU_B.v
+FE:/Pulpit/FinalCPU/ACCU_B.v
+L0 1
+Z3 OV;L;10.4d;61
+r1
+!s85 0
+31
+Z4 !s108 1569172122.000000
+!s107 E:/Pulpit/FinalCPU/ACCU_B.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+E:/Pulpit/FinalCPU|E:/Pulpit/FinalCPU/ACCU_B.v|
+!i113 1
+Z5 o-vlog01compat -work work
+Z6 !s92 -vlog01compat -work work +incdir+E:/Pulpit/FinalCPU
+n@a@c@c@u
+vALU
+Z7 !s110 1569172121
+!i10b 1
+!s100 2hXi83hDM5Mam:UEe;HfP2
+IJfOzB2hcT:D8[PDJcn=cA3
+R2
+R0
+w1568265422
+8E:/Pulpit/FinalCPU/ALU.v
+FE:/Pulpit/FinalCPU/ALU.v
+L0 1
+R3
+r1
+!s85 0
+31
+Z8 !s108 1569172121.000000
+!s107 E:/Pulpit/FinalCPU/ALU.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+E:/Pulpit/FinalCPU|E:/Pulpit/FinalCPU/ALU.v|
+!i113 1
+R5
+R6
+n@a@l@u
+vALU_MUX
+R7
+!i10b 1
+!s100 zV;;lf>O2`cJeQe9kVW282
+I87Qg6@maz^9@Zf:5@YAA90
+R2
+R0
+w1568185946
+8E:/Pulpit/FinalCPU/ALU_Mux.v
+FE:/Pulpit/FinalCPU/ALU_Mux.v
+L0 1
+R3
+r1
+!s85 0
+31
+R8
+!s107 E:/Pulpit/FinalCPU/ALU_Mux.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+E:/Pulpit/FinalCPU|E:/Pulpit/FinalCPU/ALU_Mux.v|
+!i113 1
+R5
+R6
+n@a@l@u_@m@u@x
+vARG_REG
+Z9 !s110 1569172122
+!i10b 1
+!s100 PiYBIDaYVi9o8hMbF^HSj3
+I[P?8]einKVFWi_e?A9oRd1
+R2
+R0
+w1568070508
+8E:/Pulpit/FinalCPU/RLO_REG.v
+FE:/Pulpit/FinalCPU/RLO_REG.v
+L0 1
+R3
+r1
+!s85 0
+31
+R4
+!s107 E:/Pulpit/FinalCPU/RLO_REG.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+E:/Pulpit/FinalCPU|E:/Pulpit/FinalCPU/RLO_REG.v|
+!i113 1
+R5
+R6
+n@a@r@g_@r@e@g
+vBIT_PERIPHERALS
+Z10 !s110 1569172126
+!i10b 1
+!s100 BW7h`f>O2P0K^;VUi8gW33
+IGDKVbS?e[P0h;b=KG1cNC2
+R2
+R0
+w1568537495
+8E:/Pulpit/FinalCPU/BIT_PERIPHERALS.v
+FE:/Pulpit/FinalCPU/BIT_PERIPHERALS.v
+L0 1
+R3
+r1
+!s85 0
+31
+Z11 !s108 1569172126.000000
+!s107 E:/Pulpit/FinalCPU/BIT_PERIPHERALS.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+E:/Pulpit/FinalCPU|E:/Pulpit/FinalCPU/BIT_PERIPHERALS.v|
+!i113 1
+R5
+R6
+n@b@i@t_@p@e@r@i@p@h@e@r@a@l@s
+vBIT_UNIT
+Z12 !s110 1569172120
+!i10b 1
+!s100 1SBnzn261k^A3Jl14NT8B1
+IX@FHQTiOB7=:nJM]gMk`43
+R2
+R0
+w1568070304
+8E:/Pulpit/FinalCPU/CPU_BitUnit.v
+FE:/Pulpit/FinalCPU/CPU_BitUnit.v
+L0 1
+R3
+r1
+!s85 0
+31
+Z13 !s108 1569172120.000000
+!s107 E:/Pulpit/FinalCPU/CPU_BitUnit.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+E:/Pulpit/FinalCPU|E:/Pulpit/FinalCPU/CPU_BitUnit.v|
+!i113 1
+R5
+R6
+n@b@i@t_@u@n@i@t
+vBITCORE_ARBITER
+Z14 !s110 1569172128
+!i10b 1
+!s100 UHL[iW`cKNHz7H_][W_Un1
+I9Jzih`K>G=hNneU9o1mQP2
+R2
+R0
+w1569134012
+8E:/Pulpit/FinalCPU/BITCORE_ARBITER.v
+FE:/Pulpit/FinalCPU/BITCORE_ARBITER.v
+L0 1
+R3
+r1
+!s85 0
+31
+Z15 !s108 1569172128.000000
+!s107 E:/Pulpit/FinalCPU/BITCORE_ARBITER.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+E:/Pulpit/FinalCPU|E:/Pulpit/FinalCPU/BITCORE_ARBITER.v|
+!i113 1
+R5
+R6
+n@b@i@t@c@o@r@e_@a@r@b@i@t@e@r
+vBITREAD_ARBITER
+Z16 !s110 1569172129
+!i10b 1
+!s100 =LEJ>;lJm<VR65Fz]QHI_3
+Inl9oOPjOiZJ?Z]G?P4j_i2
+R2
+R0
+w1568451381
+8E:/Pulpit/FinalCPU/BITREAD_ARBITER.v
+FE:/Pulpit/FinalCPU/BITREAD_ARBITER.v
+L0 1
+R3
+r1
+!s85 0
+31
+R15
+!s107 E:/Pulpit/FinalCPU/BITREAD_ARBITER.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+E:/Pulpit/FinalCPU|E:/Pulpit/FinalCPU/BITREAD_ARBITER.v|
+!i113 1
+R5
+R6
+n@b@i@t@r@e@a@d_@a@r@b@i@t@e@r
+vBITWRITE_ARBITER
+R14
+!i10b 1
+!s100 K;M86@nRo?]H2m?5QjG9_2
+IchSYD08idgHVQj>?bgo2S2
+R2
+R0
+w1568451518
+8E:/Pulpit/FinalCPU/BITWRITE_ARBITER.v
+FE:/Pulpit/FinalCPU/BITWRITE_ARBITER.v
+L0 1
+R3
+r1
+!s85 0
+31
+R15
+!s107 E:/Pulpit/FinalCPU/BITWRITE_ARBITER.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+E:/Pulpit/FinalCPU|E:/Pulpit/FinalCPU/BITWRITE_ARBITER.v|
+!i113 1
+R5
+R6
+n@b@i@t@w@r@i@t@e_@a@r@b@i@t@e@r
+vCOMPARATOR_REG
+Z17 !s110 1569172124
+!i10b 1
+!s100 YTj5?ecf3mW6Win025Iil3
+I;c1]MlI?RYla?N30V=HHL1
+R2
+R0
+w1568266266
+8E:/Pulpit/FinalCPU/COMPARATOR_REG.v
+FE:/Pulpit/FinalCPU/COMPARATOR_REG.v
+L0 1
+R3
+r1
+!s85 0
+31
+Z18 !s108 1569172124.000000
+!s107 E:/Pulpit/FinalCPU/COMPARATOR_REG.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+E:/Pulpit/FinalCPU|E:/Pulpit/FinalCPU/COMPARATOR_REG.v|
+!i113 1
+R5
+R6
+n@c@o@m@p@a@r@a@t@o@r_@r@e@g
+vCONTROL_UNIT
+R12
+!i10b 1
+!s100 8jQI]>Eg^<jd:;3[`9O?^0
+IPTIn1n8SS31FgMajM]<lj0
+R2
+R0
+w1569166965
+8E:/Pulpit/FinalCPU/EXE.v
+FE:/Pulpit/FinalCPU/EXE.v
+L0 1
+R3
+r1
+!s85 0
+31
+R13
+!s107 E:/Pulpit/FinalCPU/EXE.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+E:/Pulpit/FinalCPU|E:/Pulpit/FinalCPU/EXE.v|
+!i113 1
+R5
+R6
+n@c@o@n@t@r@o@l_@u@n@i@t
+vCORES
+R10
+!i10b 1
+!s100 3L1gfVQ^fW:oc8@Sk8eB<3
+IQ8<zARDDTOXMI3;nVZiS@0
+R2
+R0
+w1569171984
+8E:/Pulpit/FinalCPU/CORES.v
+FE:/Pulpit/FinalCPU/CORES.v
+L0 1
+R3
+r1
+!s85 0
+31
+R11
+!s107 E:/Pulpit/FinalCPU/CORES.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+E:/Pulpit/FinalCPU|E:/Pulpit/FinalCPU/CORES.v|
+!i113 1
+R5
+R6
+n@c@o@r@e@s
+vCPU
+Z19 !s110 1569172119
+!i10b 1
+!s100 f>R]]aT<MgbdB@YaTWSBo2
+IJfDGXjZRB11^<Haf_BoIG3
+R2
+R0
+w1569157085
+8E:/Pulpit/FinalCPU/CPU.v
+FE:/Pulpit/FinalCPU/CPU.v
+L0 1
+R3
+r1
+!s85 0
+31
+Z20 !s108 1569172119.000000
+!s107 E:/Pulpit/FinalCPU/CPU.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+E:/Pulpit/FinalCPU|E:/Pulpit/FinalCPU/CPU.v|
+!i113 1
+R5
+R6
+n@c@p@u
+vCPU_ROM
+R12
+!i10b 1
+!s100 ^efiEXVo<9To8=]zNEcf;1
+ILF5kklW8Uabdm?TNKz35j2
+R2
+R0
+w1569151370
+8E:/Pulpit/FinalCPU/PCRam.v
+FE:/Pulpit/FinalCPU/PCRam.v
+L0 1
+R3
+r1
+!s85 0
+31
+R13
+!s107 E:/Pulpit/FinalCPU/PCRam.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+E:/Pulpit/FinalCPU|E:/Pulpit/FinalCPU/PCRam.v|
+!i113 1
+R5
+R6
+n@c@p@u_@r@o@m
+vCPU_UNIT
+R14
+!i10b 1
+!s100 FQMz13Eii^i2W7F:_if[i3
+Iho?==[YT6?0C5<XmU@Mh^0
+R2
+R0
+w1569148999
+8E:/Pulpit/FinalCPU/CPU_UNIT.v
+FE:/Pulpit/FinalCPU/CPU_UNIT.v
+L0 1
+R3
+r1
+!s85 0
+31
+Z21 !s108 1569172127.000000
+!s107 E:/Pulpit/FinalCPU/CPU_UNIT.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+E:/Pulpit/FinalCPU|E:/Pulpit/FinalCPU/CPU_UNIT.v|
+!i113 1
+R5
+R6
+n@c@p@u_@u@n@i@t
+vCPU_WORLD
+R16
+!i10b 1
+!s100 1`N>MSZQj=W1I9aAoEAhO3
+I`5LYXjETg<TQ`Acon2GgB3
+R2
+R0
+w1569145868
+8E:/Pulpit/FinalCPU/cpu_world.v
+FE:/Pulpit/FinalCPU/cpu_world.v
+L0 1
+R3
+r1
+!s85 0
+31
+Z22 !s108 1569172129.000000
+!s107 E:/Pulpit/FinalCPU/cpu_world.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+E:/Pulpit/FinalCPU|E:/Pulpit/FinalCPU/cpu_world.v|
+!i113 1
+R5
+R6
+n@c@p@u_@w@o@r@l@d
+vINPUT_REGISTERS
+R10
+!i10b 1
+!s100 6_k^ndzk8zNX8zXd2AUHe2
+IJ[M5l5imQDjVlNBnBA<743
+R2
+R0
+w1567929093
+8E:/Pulpit/FinalCPU/INPUT_REGISTERS.v
+FE:/Pulpit/FinalCPU/INPUT_REGISTERS.v
+L0 1
+R3
+r1
+!s85 0
+31
+R11
+!s107 E:/Pulpit/FinalCPU/INPUT_REGISTERS.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+E:/Pulpit/FinalCPU|E:/Pulpit/FinalCPU/INPUT_REGISTERS.v|
+!i113 1
+R5
+R6
+n@i@n@p@u@t_@r@e@g@i@s@t@e@r@s
+vJMP_MUX
+R14
+!i10b 1
+!s100 `>KP[g_^:mzoh;1?Enj^E0
+I>90CL3:2MRO_kYo;Z8`DK2
+R2
+R0
+w1568140930
+8E:/Pulpit/FinalCPU/JMP_mux.v
+FE:/Pulpit/FinalCPU/JMP_mux.v
+L0 1
+R3
+r1
+!s85 0
+31
+R15
+!s107 E:/Pulpit/FinalCPU/JMP_mux.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+E:/Pulpit/FinalCPU|E:/Pulpit/FinalCPU/JMP_mux.v|
+!i113 1
+R5
+R6
+n@j@m@p_@m@u@x
+vLU
+R7
+!i10b 1
+!s100 ^7Rej3OeGz9:_P;LYRT[d1
+Ihb89PDMI>EgNL;Gh14A7a3
+R2
+R0
+w1568070475
+8E:/Pulpit/FinalCPU/LU.v
+FE:/Pulpit/FinalCPU/LU.v
+L0 1
+R3
+r1
+!s85 0
+31
+R8
+!s107 E:/Pulpit/FinalCPU/LU.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+E:/Pulpit/FinalCPU|E:/Pulpit/FinalCPU/LU.v|
+!i113 1
+R5
+R6
+n@l@u
+vOUTPUT_REGISTERS
+R10
+!i10b 1
+!s100 `zoKO:a7AOhDgcY9In1M70
+Iml=FReEWADeHAOFH9;ik91
+R2
+R0
+w1568432644
+8E:/Pulpit/FinalCPU/OUTPUT_REGISTERS.v
+FE:/Pulpit/FinalCPU/OUTPUT_REGISTERS.v
+L0 1
+R3
+r1
+!s85 0
+31
+R11
+!s107 E:/Pulpit/FinalCPU/OUTPUT_REGISTERS.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+E:/Pulpit/FinalCPU|E:/Pulpit/FinalCPU/OUTPUT_REGISTERS.v|
+!i113 1
+R5
+R6
+n@o@u@t@p@u@t_@r@e@g@i@s@t@e@r@s
+vOV_REG
+R7
+!i10b 1
+!s100 lL^1A[f]=V`H;nXQd[e[X2
+I;2`Z:z=^F2jKE5E^@@g972
+R2
+R0
+w1568265522
+8E:/Pulpit/FinalCPU/OV_Reg.v
+FE:/Pulpit/FinalCPU/OV_Reg.v
+L0 1
+R3
+r1
+!s85 0
+31
+R8
+!s107 E:/Pulpit/FinalCPU/OV_Reg.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+E:/Pulpit/FinalCPU|E:/Pulpit/FinalCPU/OV_Reg.v|
+!i113 1
+R5
+R6
+n@o@v_@r@e@g
+vPC_COUNTER
+R19
+!i10b 1
+!s100 44>PHUUYQ0S:a<E03Rf?E2
+IG6:3X>^RgWL2O@C0VYUSP0
+R2
+R0
+w1568153968
+8E:/Pulpit/FinalCPU/PC_Counter.v
+FE:/Pulpit/FinalCPU/PC_Counter.v
+L0 1
+R3
+r1
+!s85 0
+31
+R20
+!s107 E:/Pulpit/FinalCPU/PC_Counter.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+E:/Pulpit/FinalCPU|E:/Pulpit/FinalCPU/PC_Counter.v|
+!i113 1
+R5
+R6
+n@p@c_@c@o@u@n@t@e@r
+vPERIPHERALS
+R14
+!i10b 1
+!s100 S`4e?A@H<U]0JKT82ajH_0
+I7Y@oU_IU]dDFX@Ggo`YYl3
+R2
+R0
+w1569133722
+8E:/Pulpit/FinalCPU/PERIPHERIALS2.v
+FE:/Pulpit/FinalCPU/PERIPHERIALS2.v
+L0 1
+R3
+r1
+!s85 0
+31
+R15
+!s107 E:/Pulpit/FinalCPU/PERIPHERIALS2.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+E:/Pulpit/FinalCPU|E:/Pulpit/FinalCPU/PERIPHERIALS2.v|
+!i113 1
+R5
+R6
+n@p@e@r@i@p@h@e@r@a@l@s
+vPROGRAMMER
+R9
+!i10b 1
+!s100 azEe@9SNilfJ^V5XPRf:;1
+I9gA[IBFmXYiKlS]oi8MPc3
+R2
+R0
+w1568149007
+8E:/Pulpit/FinalCPU/Programmer.v
+FE:/Pulpit/FinalCPU/Programmer.v
+L0 1
+R3
+r1
+!s85 0
+31
+R4
+!s107 E:/Pulpit/FinalCPU/Programmer.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+E:/Pulpit/FinalCPU|E:/Pulpit/FinalCPU/Programmer.v|
+!i113 1
+R5
+R6
+n@p@r@o@g@r@a@m@m@e@r
+vRAM
+Z23 !s110 1569172125
+!i10b 1
+!s100 >PZL6BoUXgBX:Ph5iI@FC1
+I9<;3CoZ[Jk6UFjl6ikH9L3
+R2
+R0
+w1568431274
+8E:/Pulpit/FinalCPU/RAM.v
+FE:/Pulpit/FinalCPU/RAM.v
+L0 1
+R3
+r1
+!s85 0
+31
+Z24 !s108 1569172125.000000
+!s107 E:/Pulpit/FinalCPU/RAM.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+E:/Pulpit/FinalCPU|E:/Pulpit/FinalCPU/RAM.v|
+!i113 1
+R5
+R6
+n@r@a@m
+vREAD_ARBITER
+Z25 !s110 1569172127
+!i10b 1
+!s100 E=foDO^Bo3Hl@YcXzziU21
+IX`<IjYe]8@aa^D<UOllDR1
+R2
+R0
+w1568424953
+8E:/Pulpit/FinalCPU/WORD_READ_ARBITER.v
+FE:/Pulpit/FinalCPU/WORD_READ_ARBITER.v
+L0 1
+R3
+r1
+!s85 0
+31
+R21
+!s107 E:/Pulpit/FinalCPU/WORD_READ_ARBITER.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+E:/Pulpit/FinalCPU|E:/Pulpit/FinalCPU/WORD_READ_ARBITER.v|
+!i113 1
+R5
+R6
+n@r@e@a@d_@a@r@b@i@t@e@r
+vREGISTERS
+R1
+!i10b 1
+!s100 GjJKdehQOk@CY<VF<bH>W3
+IE[7>HHo1=VF=FGd^GLO790
+R2
+R0
+w1568465873
+8E:/Pulpit/FinalCPU/REGISTERS.v
+FE:/Pulpit/FinalCPU/REGISTERS.v
+L0 1
+R3
+r1
+!s85 0
+31
+Z26 !s108 1569172123.000000
+!s107 E:/Pulpit/FinalCPU/REGISTERS.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+E:/Pulpit/FinalCPU|E:/Pulpit/FinalCPU/REGISTERS.v|
+!i113 1
+R5
+R6
+n@r@e@g@i@s@t@e@r@s
+vRLO_REG
+R9
+!i10b 1
+!s100 0n2>iZO3W4cR51?lJYcnS3
+Ikg=g12l7IFJXiRD^02Ck<3
+R2
+R0
+w1568070306
+8E:/Pulpit/FinalCPU/RLO_A.v
+FE:/Pulpit/FinalCPU/RLO_A.v
+L0 1
+R3
+r1
+!s85 0
+31
+R4
+!s107 E:/Pulpit/FinalCPU/RLO_A.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+E:/Pulpit/FinalCPU|E:/Pulpit/FinalCPU/RLO_A.v|
+!i113 1
+R5
+R6
+n@r@l@o_@r@e@g
+vSEMAPHORE_ARRAY
+R17
+!i10b 1
+!s100 MU97Kbh1Hf>fFLzlaTngd3
+IbU?1onD?AQJ[=EYa42UEU0
+R2
+R0
+w1569152625
+8E:/Pulpit/FinalCPU/SEMAPHORE_ARRAY.v
+FE:/Pulpit/FinalCPU/SEMAPHORE_ARRAY.v
+L0 1
+R3
+r1
+!s85 0
+31
+R18
+!s107 E:/Pulpit/FinalCPU/SEMAPHORE_ARRAY.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+E:/Pulpit/FinalCPU|E:/Pulpit/FinalCPU/SEMAPHORE_ARRAY.v|
+!i113 1
+R5
+R6
+n@s@e@m@a@p@h@o@r@e_@a@r@r@a@y
+vSEMAPHORE_BLOCKER
+R16
+!i10b 1
+!s100 9ljLZ[1TV@aJ_4R>PiYJe0
+I;^YF=^LTRXD@oz2VPN;Xg3
+R2
+R0
+w1569044562
+8E:/Pulpit/FinalCPU/SEMAPHORE_BLOCKER.v
+FE:/Pulpit/FinalCPU/SEMAPHORE_BLOCKER.v
+L0 1
+R3
+r1
+!s85 0
+31
+R22
+!s107 E:/Pulpit/FinalCPU/SEMAPHORE_BLOCKER.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+E:/Pulpit/FinalCPU|E:/Pulpit/FinalCPU/SEMAPHORE_BLOCKER.v|
+!i113 1
+R5
+R6
+n@s@e@m@a@p@h@o@r@e_@b@l@o@c@k@e@r
+vSEMAPHORE_BLOCKINGMUX
+R23
+!i10b 1
+!s100 nH1K41:L>BJCd]lUQ_izG0
+IQG]V[>dNeU[bcSYL=^k4^0
+R2
+R0
+w1568566210
+8E:/Pulpit/FinalCPU/SEMAPHORE_AVAILABILITYENCODER.v
+FE:/Pulpit/FinalCPU/SEMAPHORE_AVAILABILITYENCODER.v
+L0 1
+R3
+r1
+!s85 0
+31
+R18
+!s107 E:/Pulpit/FinalCPU/SEMAPHORE_AVAILABILITYENCODER.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+E:/Pulpit/FinalCPU|E:/Pulpit/FinalCPU/SEMAPHORE_AVAILABILITYENCODER.v|
+!i113 1
+R5
+R6
+n@s@e@m@a@p@h@o@r@e_@b@l@o@c@k@i@n@g@m@u@x
+vSEMAPHORE_DATA_CONTROLLER
+R23
+!i10b 1
+!s100 ^K=n^hhI]`3Sc7TiD2l623
+IhbTnNRF]K46?_o<8N7FF=0
+R2
+R0
+w1568610444
+8E:/Pulpit/FinalCPU/SEMAPHORE_DATA_CONTROLLER.v
+FE:/Pulpit/FinalCPU/SEMAPHORE_DATA_CONTROLLER.v
+L0 1
+R3
+r1
+!s85 0
+31
+R24
+!s107 E:/Pulpit/FinalCPU/SEMAPHORE_DATA_CONTROLLER.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+E:/Pulpit/FinalCPU|E:/Pulpit/FinalCPU/SEMAPHORE_DATA_CONTROLLER.v|
+!i113 1
+R5
+R6
+n@s@e@m@a@p@h@o@r@e_@d@a@t@a_@c@o@n@t@r@o@l@l@e@r
+vSEMAPHORE_DATADECODER
+R17
+!i10b 1
+!s100 KXh[k@hPW039OZQCoBaT^2
+IoTaIKfGNb]ZoQz3E8a:jY3
+R2
+R0
+w1568565483
+8E:/Pulpit/FinalCPU/SEMAPHORE_DATAROUTER.v
+FE:/Pulpit/FinalCPU/SEMAPHORE_DATAROUTER.v
+L0 1
+R3
+r1
+!s85 0
+31
+R18
+!s107 E:/Pulpit/FinalCPU/SEMAPHORE_DATAROUTER.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+E:/Pulpit/FinalCPU|E:/Pulpit/FinalCPU/SEMAPHORE_DATAROUTER.v|
+!i113 1
+R5
+R6
+n@s@e@m@a@p@h@o@r@e_@d@a@t@a@d@e@c@o@d@e@r
+vSEMAPHORE_ENABLE_ROUTER
+R17
+!i10b 1
+!s100 >PLl_4nkkTc]Rk9<SBz6?2
+IeDi:Va[bZ91Q3P;LOU6??2
+R2
+R0
+w1569151581
+8E:/Pulpit/FinalCPU/SEMAPHORE_ENABLER.v
+FE:/Pulpit/FinalCPU/SEMAPHORE_ENABLER.v
+L0 1
+R3
+r1
+!s85 0
+31
+R18
+!s107 E:/Pulpit/FinalCPU/SEMAPHORE_ENABLER.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+E:/Pulpit/FinalCPU|E:/Pulpit/FinalCPU/SEMAPHORE_ENABLER.v|
+!i113 1
+R5
+R6
+n@s@e@m@a@p@h@o@r@e_@e@n@a@b@l@e_@r@o@u@t@e@r
+vSEMAPHORE_ROUTER
+R1
+!i10b 1
+!s100 gFfZ3[CT_E5[jhn8hPMJW3
+IYD2kY:5;K`N5n0>Ql8_ON0
+R2
+R0
+w1569149286
+8E:/Pulpit/FinalCPU/SEMAPHORE_ROUTER.v
+FE:/Pulpit/FinalCPU/SEMAPHORE_ROUTER.v
+L0 1
+R3
+r1
+!s85 0
+31
+R26
+!s107 E:/Pulpit/FinalCPU/SEMAPHORE_ROUTER.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+E:/Pulpit/FinalCPU|E:/Pulpit/FinalCPU/SEMAPHORE_ROUTER.v|
+!i113 1
+R5
+R6
+n@s@e@m@a@p@h@o@r@e_@r@o@u@t@e@r
+vSEMAPHORE_UNIT
+R1
+!i10b 1
+!s100 D]zGZT[>V3[]>eA9ZYWBW1
+IPT3LAc<8S3=JWTUY]`acY3
+R2
+R0
+w1569152087
+8E:/Pulpit/FinalCPU/SEMAPHORE_UNIT.v
+FE:/Pulpit/FinalCPU/SEMAPHORE_UNIT.v
+L0 1
+R3
+r1
+!s85 0
+31
+R26
+!s107 E:/Pulpit/FinalCPU/SEMAPHORE_UNIT.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+E:/Pulpit/FinalCPU|E:/Pulpit/FinalCPU/SEMAPHORE_UNIT.v|
+!i113 1
+R5
+R6
+n@s@e@m@a@p@h@o@r@e_@u@n@i@t
+vSEMAPHORE_WE_CONTROL
+R23
+!i10b 1
+!s100 k_4P0l`42a<`BKU6>90?V2
+ICWjj3ebE43n[dN`jeU_5n3
+R2
+R0
+w1568566480
+8E:/Pulpit/FinalCPU/SEMAPHORE_WE_CONTROLLER.v
+FE:/Pulpit/FinalCPU/SEMAPHORE_WE_CONTROLLER.v
+L0 1
+R3
+r1
+!s85 0
+31
+R24
+!s107 E:/Pulpit/FinalCPU/SEMAPHORE_WE_CONTROLLER.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+E:/Pulpit/FinalCPU|E:/Pulpit/FinalCPU/SEMAPHORE_WE_CONTROLLER.v|
+!i113 1
+R5
+R6
+n@s@e@m@a@p@h@o@r@e_@w@e_@c@o@n@t@r@o@l
+vSEMAPHORE_WR_CONTROLLER
+R23
+!i10b 1
+!s100 J80I`4EEN9<6;?zXE7a5l2
+IRTmmoK2WY?C;jc]2l6c9d0
+R2
+R0
+w1568561978
+8E:/Pulpit/FinalCPU/SEMAPHORE_SET_CONTROLLER.v
+FE:/Pulpit/FinalCPU/SEMAPHORE_SET_CONTROLLER.v
+L0 1
+R3
+r1
+!s85 0
+31
+R24
+!s107 E:/Pulpit/FinalCPU/SEMAPHORE_SET_CONTROLLER.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+E:/Pulpit/FinalCPU|E:/Pulpit/FinalCPU/SEMAPHORE_SET_CONTROLLER.v|
+!i113 1
+R5
+R6
+n@s@e@m@a@p@h@o@r@e_@w@r_@c@o@n@t@r@o@l@l@e@r
+vSTATES_CONTROLLER
+R9
+!i10b 1
+!s100 on`GZ9iiHBH^5QE^kJAmC0
+IDe2CkYaCNWKhQOZk1O22G0
+R2
+R0
+w1569144739
+8E:/Pulpit/FinalCPU/StatesController.v
+FE:/Pulpit/FinalCPU/StatesController.v
+L0 1
+R3
+r1
+!s85 0
+31
+R4
+!s107 E:/Pulpit/FinalCPU/StatesController.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+E:/Pulpit/FinalCPU|E:/Pulpit/FinalCPU/StatesController.v|
+!i113 1
+R5
+R6
+n@s@t@a@t@e@s_@c@o@n@t@r@o@l@l@e@r
+vWORD_PERIPHERALS
+R10
+!i10b 1
+!s100 gT5MkiT8JM_0SPZdKL^i?3
+IhSaOY[C[4zC2B1n<`n^T[2
+R2
+R0
+w1568430959
+8E:/Pulpit/FinalCPU/PERIPHERIALS.v
+FE:/Pulpit/FinalCPU/PERIPHERIALS.v
+L0 1
+R3
+r1
+!s85 0
+31
+R11
+!s107 E:/Pulpit/FinalCPU/PERIPHERIALS.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+E:/Pulpit/FinalCPU|E:/Pulpit/FinalCPU/PERIPHERIALS.v|
+!i113 1
+R5
+R6
+n@w@o@r@d_@p@e@r@i@p@h@e@r@a@l@s
+vWORD_UNIT
+R9
+!i10b 1
+!s100 faGlB6^>2l5I7H4?oi77k1
+I>E;87Dj=WhBzVb_g9FZHn1
+R2
+R0
+w1568266083
+8E:/Pulpit/FinalCPU/CPU_WordUnit.v
+FE:/Pulpit/FinalCPU/CPU_WordUnit.v
+L0 1
+R3
+r1
+!s85 0
+31
+R4
+!s107 E:/Pulpit/FinalCPU/CPU_WordUnit.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+E:/Pulpit/FinalCPU|E:/Pulpit/FinalCPU/CPU_WordUnit.v|
+!i113 1
+R5
+R6
+n@w@o@r@d_@u@n@i@t
+vWORDCORE_ARBITER
+R25
+!i10b 1
+!s100 GgKi0bH0zN^6CB=4W^2LL2
+Ikfnm1z5WWCh4bJUinOeEe3
+R2
+R0
+w1569133951
+8E:/Pulpit/FinalCPU/CORE_ARBITER.v
+FE:/Pulpit/FinalCPU/CORE_ARBITER.v
+L0 1
+R3
+r1
+!s85 0
+31
+R21
+!s107 E:/Pulpit/FinalCPU/CORE_ARBITER.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+E:/Pulpit/FinalCPU|E:/Pulpit/FinalCPU/CORE_ARBITER.v|
+!i113 1
+R5
+R6
+n@w@o@r@d@c@o@r@e_@a@r@b@i@t@e@r
+vWRITE_ARBITER
+R25
+!i10b 1
+!s100 :n8VFQPbk2=KF3>`jHmH`3
+Imf_W?954TWiX__N483`<80
+R2
+R0
+w1568425147
+8E:/Pulpit/FinalCPU/WORD_WRITE_ARBITER.v
+FE:/Pulpit/FinalCPU/WORD_WRITE_ARBITER.v
+L0 1
+R3
+r1
+!s85 0
+31
+R11
+!s107 E:/Pulpit/FinalCPU/WORD_WRITE_ARBITER.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+E:/Pulpit/FinalCPU|E:/Pulpit/FinalCPU/WORD_WRITE_ARBITER.v|
+!i113 1
+R5
+R6
+n@w@r@i@t@e_@a@r@b@i@t@e@r

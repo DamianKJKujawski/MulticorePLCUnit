@@ -1,0 +1,26 @@
+module PERIPHERALS
+(
+	input wire 		   CLK,
+	input wire 		   PERIPHERALS_WE,
+
+	input wire [15:0] PERIPHERALS_InADDR,
+	input wire [7:0]  PERIPHERALS_InDATA,
+
+	input wire [15:0] PERIPHERALS_OutADDR,
+	output reg [7:0]  PERIPHERALS_OutDATA
+);
+
+	reg [7:0] RAM[256:0];
+	
+	// Port A
+	always @ (posedge CLK)
+	begin
+		RAM_OutDATA <= RAM[RAM_OutADDR];
+	
+		if (RAM_WE) 
+		begin
+			RAM[RAM_InADDR] <= RAM_InDATA;
+		end 
+	end
+	
+endmodule 

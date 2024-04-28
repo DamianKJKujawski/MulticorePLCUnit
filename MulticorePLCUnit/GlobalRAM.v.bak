@@ -1,0 +1,14 @@
+module GlobalRAM
+(
+	input 				clk,
+
+	output wire 		CPU_Bit_OutputData,
+	output wire [7:0]	CPU_Word_OutputData
+);
+
+
+
+
+
+
+endmodule 

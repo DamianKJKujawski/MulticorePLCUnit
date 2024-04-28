@@ -1,0 +1,28 @@
+module RAM_CONTROLLER
+(
+	input wire 				CLK,
+
+	//RAM - Read data:
+	input wire				RAMCONTROLLER_InDataACK,
+	input wire 	[7:0] 	RAMCONTROLLER_InData,
+	
+	output wire [15:0] 	RAMCONTROLLER_InDataADDR,
+	output wire				RAMCONTROLLER_InDataRR,
+	
+	//RAM - Write data:
+	input wire				RAMCONTROLLER_OutDataACCESS,
+	
+	output wire [7:0] 	RAMCONTROLLER_OutData,
+	output wire [15:0] 	RAMCONTROLLER_OutDataADDR,
+	output wire				RAMCONTROLLER_OutDataWR
+
+
+);
+
+
+
+
+
+
+
+endmodule 
