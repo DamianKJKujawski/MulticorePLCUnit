@@ -5,20 +5,20 @@ OPCODE:
 *------------------------------------------ L O A D -----------------------------------------*
 
 * Load Constant																	
-( Rozkaz | Arg | 0+LU-OPcode )
+( Instruction | Arg | 0+LU-OPcode )
  {0001} {0} {000}			Rb  		0 -> RLO	//1 cykl			//DEKODER: {0001X}
  {0001} {1} {000}			Sb  		1 -> RLO
 
 * Load from OV: (1 cycle operations)				//1 cykl			//DEKODER: {0001X}
-( Rozkaz | Arg | RLO-Addr )
+( Instruction | Arg | RLO-Addr )
  {0001} {X} {100}			LDb OV 		OV  -> RLO 
 
 * Load from Comparator: (1 cycle operations)		//1 cykl			//DEKODER: {0001X}
-( Rozkaz | Arg | RLO-Addr )
+( Instruction | Arg | RLO-Addr )
  {0001} {X}} {101}			LDb CMP 	CMP -> RLO 
 
 |* Load from RAM: (4 cycle operations)				//3 cykle			//DEKODER: {00100}
-|( Rozkaz | Arg | RLO-Addr )						
+|( Instruction | Arg | RLO-Addr )						
 |---------------------------------------------------------------------------------------------
 |{0010} {0} {001} 			LDb MEM		(MEM) -> RLO
 |---------------------------------------------------------------------------------------------
@@ -28,7 +28,7 @@ OPCODE:
 |---------------------------------------------------------------------------------------------												
 
 * LU:
- ( Rozkaz | RLO-Addr | LU-OPcode )
+ ( Instruction | RLO-Addr | LU-OPcode )
 
  {0011} {00} {00}			Ab CONST	RLO  x  CONST -> RLO	//2 cykl //DEKODER: {00110}
  {0011} {00} {01}			Ob CONST	RLO  +  CONST -> RLO 
@@ -64,7 +64,7 @@ OPCODE:
 
 *------------------------------------------ L O A D -----------------------------------------*
 |* Load from RAM:
-|{ Rozkaz | Bit=0/Word=1 | RLO-Addr }
+|{ Instruction | Bit=0/Word=1 | RLO-Addr }
 |---------------------------------------------------------------------------------------------
 |{0111} {0} {001}			LDw MEM		AKU_A -> AKU_B; (MEM) -> AKU_A		//3 cykle //DEKODER: {01110}
 |---------------------------------------------------------------------------------------------
@@ -126,7 +126,7 @@ OPCODE:
  {0000} {0000}					STOP
 
 * Save to Semaphore:
- {1100} {0} {000}				SET		 RLO -> (SEM)
+ {1100} {0} {000}				SET RLO -> (SEM)
 
 * Read Semaphore:
  {1100} {1} {110}				READ	(SEM) -> RLO  
