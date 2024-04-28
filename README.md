@@ -1,28 +1,29 @@
 OPCODE:
 
 ```
+
 * 				Instruction set for bit operands:			     *
 *------------------------------------------ L O A D -----------------------------------------*
 
 * Load Constant																	
 ( Instruction | Arg | 0+LU-OPcode )
- {0001} {0} {000}			Rb  		0 -> RLO	//1 cykl			//DEKODER: {0001X}
+ {0001} {0} {000}			Rb  		0 -> RLO	//1 cykl	//DECODER: {0001X}
  {0001} {1} {000}			Sb  		1 -> RLO
 
-* Load from OV: (1 cycle operations)				//1 cykl			//DEKODER: {0001X}
+* Load from OV: (1 cycle operations)					//1 cycle	//DECODER: {0001X}
 ( Instruction | Arg | RLO-Addr )
  {0001} {X} {100}			LDb OV 		OV  -> RLO 
 
-* Load from Comparator: (1 cycle operations)		//1 cykl			//DEKODER: {0001X}
+* Load from Comparator: (1 cycle operations)				//1 cycle	//DECODER: {0001X}
 ( Instruction | Arg | RLO-Addr )
  {0001} {X}} {101}			LDb CMP 	CMP -> RLO 
 
-|* Load from RAM: (4 cycle operations)				//3 cykle			//DEKODER: {00100}
+|* Load from RAM: (4 cycle operations)					//3 cycles	//DECODER: {00100}
 |( Instruction | Arg | RLO-Addr )						
 |---------------------------------------------------------------------------------------------
 |{0010} {0} {001} 			LDb MEM		(MEM) -> RLO
 |---------------------------------------------------------------------------------------------
-|* Load from REGISTER:								//2 cykl			//DEKODER: {00101}
+|* Load from REGISTER:			//2 cycles	//DECODER: {00101}
 |---------------------------------------------------------------------------------------------
 |{0010} {1} {010}			LDb REG 	(REG) -> RLO 
 |---------------------------------------------------------------------------------------------												
@@ -42,15 +43,15 @@ OPCODE:
  {0011} {10} {01}			Ob REG		RLO  +  (REG) -> RLO 
  {0011} {10} {11}			Xb REG		RLO xor (REG) -> RLO
  
- {0100} {11} {10}			Nb 	       -RLO -> RLO				// 1 cycle // DECODER: {01001}
+ {0100} {11} {10}			Nb 	       -RLO -> RLO		// 1 cycle // DECODER: {01001}
 
 |* Save to RAM:
 |---------------------------------------------------------------------------------------------
-|{0101} {0} {001}			STb MEM	 	RLO -> (MEM)		    //3 cycles // DECODER: {01010}
+|{0101} {0} {001}			STb MEM	 	RLO -> (MEM)		//3 cycles // DECODER: {01010}
 |---------------------------------------------------------------------------------------------
 |* Save to Register:
 |---------------------------------------------------------------------------------------------
-|{0101} {1} {010}			STb REG	 	RLO -> (REG)			//2 cycles // DECODER: {01001}
+|{0101} {1} {010}			STb REG	 	RLO -> (REG)		//2 cycles // DECODER: {01001}
 |---------------------------------------------------------------------------------------------
 
 
@@ -74,9 +75,9 @@ OPCODE:
 |---------------------------------------------------------------------------------------------
 
 * ALU:
- {1000} {0000}				AND  		AKU_B and AKU_A -> AKU_A 		0 -> OV		// 1 cycle      		// CODER: 1000
- {1000} {0001}				OR  		AKU_B or AKU_A -> AKU_A 		0 -> OV 	// {00XX}  		   -> Clear OV
- {1000} {0010}				NEG  		-AKU_A -> AKU_A 				0 -> OV 	// {100X}  		   -> flag modification
+ {1000} {0000}				AND  		AKU_B and AKU_A -> AKU_A 		0 -> OV		// 1 cycle 		// DECODER: 1000
+ {1000} {0001}				OR  		AKU_B or AKU_A -> AKU_A 		0 -> OV 	// {00XX}  -> Clear OV
+ {1000} {0010}				NEG  		-AKU_A -> AKU_A 			0 -> OV 	// {100X}  -> flag modification
  {1000} {0011}				XOR  		AKU_B xor AKU_A -> AKU_A 		0 -> OV		// (1XXX && !100X)) -> Set Comparator 
  
  {1000} {0100}				SL  		AKU_A << 1 AKU_A [15] -> OV 0 -> AKU_A [0]
@@ -90,7 +91,7 @@ OPCODE:
  {1000} {1010}				EQ  		AKU_A = AKU_B -> RLO O 							
  {1000} {1011}				GT  		AKU_A > AKU_B -> RLO O 
  {1000} {1100}				GE  		AKU_A >= AKU_B -> RLO O 
- {1000} {1101}				NE 	 		AKU_A >< AKU_B -> RLO O 
+ {1000} {1101}				NE 	 	AKU_A >< AKU_B -> RLO O 
  {1000} {1110}				LE  		AKU_A <= AKU_B -> RLO O 
  {1000} {1111}				LT  		AKU_A < AKU_B -> RLO O 
 
@@ -133,8 +134,5 @@ OPCODE:
 
 * Wait for Semaphore:
  {1101} {1110}					WAIT	(SEM) -> RLO
-==============================================================================================			
-* Other: (1 cycle operations)
- {0000} {1000} 					END
- DEFAULT						No operate
+
 ```
