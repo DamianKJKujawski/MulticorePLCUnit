@@ -1,6 +1,6 @@
 GOTO: [Base-Projects](https://github.com/DamianKJKujawski/Base-Projects) [Ideas-Projects](https://github.com/DamianKJKujawski/Ideas-Projects) [MicroOS](https://github.com/DamianKJKujawski/MicroOS) [Electronics](https://github.com/DamianKJKujawski/Electronics) [Design Patterns](https://github.com/DamianKJKujawski/DesignPatterns) [MulticorePLCUnit](https://github.com/DamianKJKujawski/MulticorePLCUnit) [PCB Design](https://github.com/DamianKJKujawski/PCB) [Antennas](https://github.com/DamianKJKujawski/Antennas)
 
-### MulticorePLCUnit
+### MulticorePLCUnit:
 
 ![image](https://github.com/DamianKJKujawski/MulticorePLCUnit/assets/160174331/47a41ac1-8580-4297-932f-58011cfb5ed6)
 
