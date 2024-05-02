@@ -2,6 +2,8 @@ GOTO: [Base-Projects](https://github.com/DamianKJKujawski/Base-Projects) [Ideas-
 
 ### MulticorePLCUnit:
 
+# 4-Cores Implementation:
+
 ![image](https://github.com/DamianKJKujawski/MulticorePLCUnit/assets/160174331/47a41ac1-8580-4297-932f-58011cfb5ed6)
 
 OPCODE:
